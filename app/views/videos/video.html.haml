@@ -1,10 +1,14 @@
-%div
-  %span.span7
-    %img{:src => @video.large_cover_url}/
-  %span.span3
-  %h3.pull-left= @video.title
-  %br/
-  %p.pull-left= @video.description
-  %p
-    %br/
-    %a.btn.btn-primary{:href => "#"} Watch Now
+/ Video section LEFT: Large image of video, RIGHT: Title, Desc, Rate
+%article.video
+  .container
+    .row
+      .video_large_cover.span7.offset1
+        %img{:src => @video.large_cover_url}/
+      .video_info.span3
+        %header
+          %h3= @video.title
+          %span Rating: 4.5/5.0
+        %p.pull-left= @video.description
+        .actions
+          %a.btn.btn-primary{:href => "#"} Watch Now
+          %a.btn{:href => "#"} + My Queue    

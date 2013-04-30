@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_filter :find_video, only: [:video]
 
   def home
     @videos = Video.all
@@ -6,7 +7,11 @@ class VideosController < ApplicationController
   end   
 
   def video
-    @video = Video.first
   end
 
+  private
+
+  def find_video
+    @video = Video.find(params[:id])
+  end
 end
