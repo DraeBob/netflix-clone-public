@@ -1,5 +1,10 @@
+%article
 - @categories.each do |category|
-  %header= link_to category.name
-  %br/
-  - category.videos.each do |video|
-    %img{:src => video.small_cover_url}/    
+  .well
+    %header
+      %strong= link_to category.name
+      %br/
+      %br/
+    - category.videos.each do |video|
+      %img{:src => video.small_cover_url}/    
+    
