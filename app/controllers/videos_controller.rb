@@ -1,12 +1,12 @@
 class VideosController < ApplicationController
-  before_filter :find_video, only: [:video]
+  before_filter :find_video, only: [:show]
 
-  def home
+  def index # changed from home
     @videos = Video.all
     @categories = Category.all
   end   
 
-  def video
+  def show # changed from video
   end
 
   private
