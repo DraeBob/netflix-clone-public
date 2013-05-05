@@ -6,4 +6,8 @@ describe Video do
     video.save
     Video.first.title.should == 'Test Title'
   end
+
+  it { should have_many(:categories).through(:video_categories) }
+  it { should validate_presence_of(:title) }
+  it { should validate_presence_of(:description) }
 end
