@@ -6,7 +6,7 @@ Myflix::Application.routes.draw do
   # get '/home', to: 'videos#home'
   # get '/video/:id', to: 'videos#video'
 
-  resources :videos
+  resources :videos, only: [:index, :show]
 
   resources :categories, except: [:edit, :update, :destroy]
 end
