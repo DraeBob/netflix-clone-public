@@ -3,11 +3,14 @@ class VideosController < ApplicationController
 
   def index 
     @videos = Video.all
-    @video_titles = Video.search_by_title(params[:search_term])
     @categories = Category.all
   end   
 
   def show 
+  end
+
+  def search
+    @videos = Video.search_by_title(params[:search_term])    
   end
 
   private
