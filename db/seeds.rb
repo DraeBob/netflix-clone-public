@@ -1,11 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+comedy = Category.create(name: 'Comdey')
+cartoon = Category.create(name: 'Cartoon')
+drama = Category.create(name: 'Drama')
+family = Category.create(name: 'Family')
+Video.create(title: 'Family Guy', description: 'Some random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg', categories:[comedy, family])
+Video.create(title: 'South Park', description: 'Versin 2 Some random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/south_park.jpg' , large_cover_url:'/tmp/monk_large.jpg', categories:[drama, cartoon, comedy])
+Video.create(title: 'Futurama', description: '33333 random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/futurama.jpg' , large_cover_url:'/tmp/monk_large.jpg', categories:[comedy, family])
+Video.create(title: 'Family Guy 2', description: 'Some random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg', categories:[comedy, family])
+Video.create(title: 'South Park 2', description: 'Versin 2 Some random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/south_park.jpg' , large_cover_url:'/tmp/monk_large.jpg', categories:[comedy, cartoon, family, drama])
+Video.create(title: 'Futurama 2', description: '33333 random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/futurama.jpg' , large_cover_url:'/tmp/monk_large.jpg', categories:[comedy, cartoon, family, drama])
+Video.create(title: 'Family Guy 3', description: 'Some random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg', categories:[comedy, cartoon, drama])
+Video.create(title: 'South Park 3', description: 'Versin 2 Some random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/south_park.jpg' , large_cover_url:'/tmp/monk_large.jpg', categories:[comedy, family, drama])
+Video.create(title: 'Futurama 3', description: '33333 random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/futurama.jpg' , large_cover_url:'/tmp/monk_large.jpg', categories:[comedy, cartoon])
 
-Video.create(title: 'Test Title', description: 'Some random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg')
-Video.create(title: 'Test Title 2', description: 'Versin 2 Some random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/south_park.jpg' , large_cover_url:'/tmp/monk_large.jpg')
-Video.create(title: 'Test Title 3', description: '33333 random description, ern fjdij djdjsk;lsdjohebr fndcd', small_cover_url: '/tmp/futurama.jpg' , large_cover_url:'/tmp/monk_large.jpg')

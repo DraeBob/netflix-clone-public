@@ -1,12 +1,13 @@
 class VideosController < ApplicationController
   before_filter :find_video, only: [:show]
 
-  def index # changed from home
+  def index 
     @videos = Video.all
+    @video_titles = Video.search_by_title(params[:search_term])
     @categories = Category.all
   end   
 
-  def show # changed from video
+  def show 
   end
 
   private
