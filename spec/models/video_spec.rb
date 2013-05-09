@@ -21,8 +21,7 @@ describe Video do
     end
 
     it "should return empty array when nothing is found" do
-      video = Video.new(title: 'Test Title', description: 'Some random description')   
-      expect(Video.search_by_title("Test Title")).to_not include [@video1, @video2]
+      expect(Video.search_by_title("Test Title")).to eq []
     end
   end
 end
