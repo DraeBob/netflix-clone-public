@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Video do
   before :each do
-    @video1 = Video.new(title: 'Family Guy', description: 'Some random description', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg')
-    @video2 = Video.new(title: 'Futurama', description: 'Some random description', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg')
+    @video1 = Video.create(title: 'Family Guy', description: 'Some random description', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg')
+    @video2 = Video.create(title: 'Futurama', description: 'Some random description', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg')
   end
 
   it "save itself" do
