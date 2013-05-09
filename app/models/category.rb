@@ -6,6 +6,7 @@ class Category < ActiveRecord::Base
   validates :name, presence: true
 
   def recent_videos
-    find(:all, limit: 6, order: "created_at desc")
+    videos = Video.find(:all, order: "created_at desc", limit: 6)
+    #videos = Video.order("created_at desc").limit(6)
   end
 end
