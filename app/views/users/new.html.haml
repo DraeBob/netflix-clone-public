@@ -2,25 +2,24 @@
 %section.register.container
   .row
     .span10.offset1
-      %form.form-horizontal
-        %header
-          %h1 Register
-          / Used bootstrap_form
-          / = bootstrap_form_for(@user, html: { class: 'form-horizontal' }, help: :block) do |f|
-          /   = f.alert_message "Please fix the errors below."
-          /   = f.text_field :email
-          /   = f.password_field :password, placeholder: '*Minimum 6 characters'
-          /   = f.text_field :fullname
-          /   = f.actions do
-          /     = f.primary 'Register', disable_with: 'Saving...'
+      %header
+        %h1 Register
+        / Used bootstrap_form
+        = bootstrap_form_for(@user, html: { class: 'form-horizontal' }, help: :block) do |f|
+          = f.alert_message "Please fix the errors below."
+          = f.text_field :email
+          = f.password_field :password, placeholder: '*Minimum 6 characters'
+          = f.text_field :fullname
+          = f.actions do
+            = f.primary 'Register', disable_with: 'Saving...'
 
-          /--- Form builder [ App > Helpers > my_form_builder.rb & application_helper.rb ] ---/
-          = my_form_for @user do |f|
-            = f.label :eamil, "Email"
-            = f.text_field :email
-            = f.label :password, "Password"
-            = f.password_field :password, placeholder: '*Minimum 6 characters'
-            = f.label :fullname, "Full Name"
-            = f.text_field :fullname
-            %br
-            = f.submit 'Register'  
+        /--- Form builder [ App > Helpers > my_form_builder.rb & application_helper.rb ] ---/
+        / = my_form_for @user do |f|
+        /   = f.label :eamil, "Email"
+        /   = f.text_field :email
+        /   = f.label :password, "Password"
+        /   = f.password_field :password, placeholder: '*Minimum 6 characters'
+        /   = f.label :fullname, "Full Name"
+        /   = f.text_field :fullname
+        /   %br
+        /   = f.submit 'Register'  
