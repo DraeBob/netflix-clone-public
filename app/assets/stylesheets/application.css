@@ -13,4 +13,5 @@
  *= require bootstrap-responsive
  *= require whitespace-reset
  *= require_tree .
+ *= require bootstrap_form
 */
