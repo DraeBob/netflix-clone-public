@@ -17,11 +17,19 @@ describe Video do
 
   context "Using search_by_title" do
     it "should return all the videos if the keyword is found in video titles" do
-      expect(Video.search_by_title("Guy")).to include @video1
+      expect(Video.search_by_title("F")).to include(@video1, @video2)
     end
 
     it "should return empty array when nothing is found" do
       expect(Video.search_by_title("Test Title")).to eq []
     end
+
+    it "should return the video if the search keyword matches exactly" do
+      expect(Video.search_by_title("Futurama")).to include @video2
+    end
+
+    it "should return all the videos if the keyword is empty" do
+      expect(Video.search_by_title("")).to include(@video1, @video2)
+    end    
   end
 end

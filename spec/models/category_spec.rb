@@ -26,12 +26,13 @@ describe Category do
       @video9 = Video.create(title: 'Futurama 3', description: 'Some random description', categories:[@comedy, @cartoon])
     end
 
-    it "should display recent video first" do
-      expect(Video.order('created_at desc').first).to eq(@video9)
+    it "should display maximum 6 videos par category" do
+      expect(@comedy.recent_videos.count).to eq(6)
     end
 
-    it "should display maximum 6 videos par category" do
-      expect(Video.limit(6).last).to eq(@video6)
+    it "should return reverse chronologial order" do
+      expect(@comedy.recent_videos.first).to eq(Video.order('created_at desc').first)
+      expect(@comedy.recent_videos.last).to eq(Video.order('created_at desc').limit(6).last)
     end
   end
 end
