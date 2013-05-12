@@ -11,19 +11,13 @@ describe Category do
 
   context "recent video" do
     before :each do
-      @comedy = Category.create(name: 'Comdey')
-      @cartoon = Category.create(name: 'Cartoon')
-      @drama = Category.create(name: 'Drama')
-      @family = Category.create(name: 'Family')
-      @video1 = Video.create(title: 'Family Guy', description: 'Some random description', categories:[@comedy, @family])
-      @video2 = Video.create(title: 'South Park', description: 'Some random description', categories:[@drama, @cartoon, @comedy])
-      @video3 = Video.create(title: 'Futurama', description: 'Some random description', categories:[@comedy, @family])
-      @video4 = Video.create(title: 'Family Guy 2', description: 'Some random description', categories:[@comedy, @family])
-      @video5 = Video.create(title: 'South Park 2', description: 'Some random description', categories:[@comedy, @cartoon, @family, @drama])
-      @video6 = Video.create(title: 'Futurama 2', description: 'Some random description', categories:[@comedy, @cartoon, @family, @drama])
-      @video7 = Video.create(title: 'Family Guy 3', description: 'Some random description', categories:[@comedy, @cartoon, @drama])
-      @video8 = Video.create(title: 'South Park 3', description: 'Some random description', categories:[@comedy, @family, @drama])
-      @video9 = Video.create(title: 'Futurama 3', description: 'Some random description', categories:[@comedy, @cartoon])
+      @family = Category.create!(name: 'Family')
+      @comedy = Category.create!(name: 'Comedy')
+      7.times {Video.create!(title: 'Family Guy', description: 'Some random description', categories:[@comedy])}
+    end
+
+    it "should display none if there is no video in the category" do
+      expect(@family.recent_videos.count).to eq(0)
     end
 
     it "should display maximum 6 videos par category" do
