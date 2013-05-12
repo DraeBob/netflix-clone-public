@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'haml-rails'
 gem 'bootstrap-sass'
+gem 'bcrypt-ruby'
+gem 'bootstrap_form'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -32,4 +34,5 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem "factory_girl_rails", "~> 4.0"
 end

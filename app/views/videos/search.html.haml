@@ -1,0 +1,6 @@
+%article
+  %h3 Search Result for "#{params[:search_term]}"
+  .well
+    - @videos.each do |video|
+      = link_to image_tag(video.small_cover_url), video_path(video)  
+

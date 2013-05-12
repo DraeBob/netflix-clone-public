@@ -1,12 +1,16 @@
 class VideosController < ApplicationController
+  before_filter :require_user
   before_filter :find_video, only: [:show]
 
-  def index # changed from home
-    @videos = Video.all
+  def index 
     @categories = Category.all
   end   
 
-  def show # changed from video
+  def show 
+  end
+
+  def search
+    @videos = Video.search_by_title(params[:search_term])    
   end
 
   private
