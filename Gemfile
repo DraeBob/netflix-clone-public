@@ -14,7 +14,6 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'pry'
   gem 'pry-nav'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -33,6 +32,8 @@ group :test do
 end
 
 group :development, :test do
+  gem 'pry'
   gem 'rspec-rails', '~> 2.0'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
 end
