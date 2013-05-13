@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      session[:user_id] = @user.id
+      session[:user] = current_user
       flash[:notice] = "Successfully registered"
       redirect_to videos_path
     else
