@@ -11,6 +11,7 @@ describe Video do
     Video.first.should == @video1
   end
 
+  it { should have_many(:reviews) }
   it { should have_many(:categories).through(:video_categories) }
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:description) }
@@ -31,5 +32,16 @@ describe Video do
     it "should return all the videos if the keyword is empty" do
       expect(Video.search_by_title("")).to include(@video1, @video2)
     end    
+  end
+
+  context "Average rating method" do
+    it "should return 0 if there is no review" do
+      expect(@video1.average_ratings).to eq 0
+    end
+    it "should return the average review if there are any reviews" do
+      @video1.reviews << create(:review, rate: 2)
+      @video1.reviews << create(:review, rate: 5)
+      expect(@video1.average_ratings).to eq(3.5)
+    end
   end
 end

@@ -4,5 +4,4 @@ class Review < ActiveRecord::Base
 
   validates :body, presence: true
   validates :rate, presence: true
-
 end
