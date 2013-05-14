@@ -7,8 +7,48 @@
       .video_info.span3
         %header
           %h3= @video.title
-          %span Rating: 4.5/5.0
+          %span Average Rating: 4.5/5.0
         %p.pull-left= @video.description
         .actions
           %a.btn.btn-primary{:href => "#"} Watch Now
           %a.btn{:href => "#"} + My Queue    
+%section.reviews.container
+  .row
+    .span10.offset1
+
+      = bootstrap_form_for([@video,@review], help: :block) do |f|
+        %fieldset
+          =f.select :rate, [["5 Stars", 5],["4 Stars", 4],["3 Stars", 3],["2 Stars", 2],["1 Star", 1]], label: 'Rate this video'
+          = f.alert_message "Please fix the errors below."
+          = f.text_area :body, label:'Write Review', rows: 5, class: 'span5'
+          %fieldset.actions.clearfix
+            = f.submit 'Submit', disable_with: 'Saving...', class: 'btn'
+            %a(href="") Cancel
+
+      %header
+        %h3 User Reviews (#{@video.reviews.count})
+      %ul
+        -@video.recent_reviews.each do |review|
+          %article.review
+            %li.row
+              .span2
+                %span 
+                  Rating : #{review.rate} / 5
+                %p 
+                  by #{review.user.fullname}  
+              .span8
+                %p= review.body
+
+
+
+
+
+      / %ul
+      /   - 2.times do
+      /     %article.review
+      /       %li.row
+      /         .span2
+      /           %span Rating: 5 / 5
+      /           %p by <a href="">John A. Zoidberg</a>
+      /         .span8
+      /           %p In my opinion, this is one of the best shows ever made. It's not only funny, but despite being so frequently silly, it's very smart as well. Math, science, history, all get referenced. The best parts of the show are the subtle things, those little things in the background or just on screen for a couple of seconds that just make you laugh out loud if you were paying attention. The writers even appear to have been thinking ahead, because if you play close attention to the first episode, you can see a literal shadow of an event revealed seasons later.

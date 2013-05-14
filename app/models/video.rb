@@ -1,4 +1,5 @@
 class Video < ActiveRecord::Base
+  has_many :reviews
   has_many :video_categories
   has_many :categories, through: :video_categories
 
@@ -11,5 +12,15 @@ class Video < ActiveRecord::Base
     else
       find(:all)
     end
+  end
+
+  def recent_reviews
+    reviews.order("created_at desc")
+  end  
+
+  def average_ratings
+    average = 0
+    total = @video.reviews.each {|r| total +=r.rate} 
+    average = total / @video.reviews.count
   end
 end
