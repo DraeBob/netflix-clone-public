@@ -19,8 +19,10 @@ class Video < ActiveRecord::Base
   end  
 
   def average_ratings
-    average = 0
-    total = @video.reviews.each {|r| total +=r.rate} 
-    average = total / @video.reviews.count
+    if reviews.size > 0
+      (reviews.collect(&:rate).inject{ |sum, el| sum + el }.to_f / reviews.size).round(1) 
+    else
+      0
+    end
   end
 end
