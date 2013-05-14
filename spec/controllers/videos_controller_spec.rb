@@ -40,22 +40,6 @@ describe VideosController do
   describe "POST search" do
 
     context "When user is not logged in" do
-      it "return empty if search term does not match" do
-        video = create(:video)
-        post :search, search_term: "dffsfdfdsf"
-        assigns(:videos).should == []
-      end
-      it "return the corresponding videos if the search term exactly matches" do
-        video = create(:video)
-        post :search, search_term: video.title
-        assigns(:videos).should == [video]
-      end   
-
-      it "return the corresponding videos if the search term partially matches" do
-        video = Video.create!(title:'sample', description:'random')
-        post :search, search_term: 'ple'
-        assigns(:videos).should == [video]
-      end
       it "renders the search template" do
         video = create(:video)
         post :search, search_term: video.title

@@ -10,20 +10,57 @@ describe SessionsController do
   end
 
   describe "POST create" do
-    it "if user is found in db, redirect to videos_path" do
-      user = User.create!(fullname:'aaa bbb', email:'aaa@example.com', password:'password')
-      post :create, user: attributes_for(:user)
-      expect(response).to redirect_to videos_path
+    context "registered user" do
+      before {@user = create(:user)}
+
+      it "set session[:user_id] to user.id" do
+        post :create, email: @user.email, password: @user.password
+        expect(session[:user_id]).to eq(@user.id)
+      end
+
+      it "display flash message" do
+        post :create, email: @user.email, password: @user.password
+        expect(flash[:notice]).to eq("Welcome, you are logged in")
+      end       
+
+      it "redirect to videos_path" do
+        post :create, email: @user.email, password: @user.password
+        expect(response).to redirect_to videos_path
+      end   
     end
 
-    it "if user is found in db, display flash message"
-    it "if user is found in db, set session[:user_id] to user.id"
-    it "render login page if user request is incorrect"
-    it "if user is not found in db, display error message"
+    context "un-registered user or incorrect input" do
+      before {@user = create(:user)}
+
+      it "render login page" do
+        post :create, email: @user.email, password: nil
+        expect(response).to redirect_to '/login'
+      end
+
+      it "display error message" do
+        post :create, email: @user.email, password: nil
+        expect(flash[:error]).to eq("Email or password is incorrect")
+      end
+    end
   end
 
   describe "DELETE destroy" do
-    it "should logout if logout button is clicked"
+    context "logout success" do
+      it "set seesion id to nil" do
+        delete :destroy
+        expect(session[:user_id]).to eq nil
+      end
+      
+      it "display flash message" do
+        delete :destroy
+        expect(flash[:notice]).to eq("You are logged out")
+      end
+
+      it "redirect to root path (front page)" do
+        delete :destroy
+        expect(response).to redirect_to root_path
+      end
+    end
   end
 
 end

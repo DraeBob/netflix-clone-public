@@ -7,7 +7,7 @@ FactoryGirl.define do
     password { Faker::Lorem.characters}
 
     factory :invalid_user do
-      email nil
+      password nil
     end
   end
 end
