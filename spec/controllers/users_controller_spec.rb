@@ -37,7 +37,7 @@ describe UsersController do
 
     it "set current_user when registered successfully" do
       post :create, user: attributes_for(:user)
-      expect(controller.current_user).to eq(session[:user])
+      expect(session[:user_id]).to eq(User.first.id)
     end
 
     it "Do not save the user if inputs are invalid" do
