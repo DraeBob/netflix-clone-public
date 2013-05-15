@@ -1,14 +1,11 @@
 require 'spec_helper'
 
 describe Video do
-  before :each do
-    @video1 = Video.create!(title: 'Family Guy', description: 'Some random description', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg')
-    @video2 = Video.create!(title: 'Futurama', description: 'Some random description', small_cover_url: '/tmp/family_guy.jpg' , large_cover_url:'/tmp/monk_large.jpg')
-  end
 
   it "save itself" do
-    @video1.save
-    Video.first.should == @video1
+    video = Video.new(title: 'Family Guy', description: 'Some random description')
+    video.save
+    Video.first.should == video
   end
 
   it { should have_many(:reviews) }
@@ -16,9 +13,12 @@ describe Video do
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:description) }
 
-  context "Using search_by_title" do
+  describe "#search_by_title" do
+    let!(:video) { Fabricate(:video, title: 'Family Guy', description: 'description1')}
+    let!(:video2) { Fabricate(:video, title: 'Futurama', description: 'description2')}
+
     it "should return all the videos if the keyword is found in video titles" do
-      expect(Video.search_by_title("F")).to include(@video1, @video2)
+      expect(Video.search_by_title("F")).to include(video2, video)
     end
 
     it "should return empty array when nothing is found" do
@@ -26,22 +26,24 @@ describe Video do
     end
 
     it "should return the video if the search keyword matches exactly" do
-      expect(Video.search_by_title("Futurama")).to include @video2
+      expect(Video.search_by_title("Family Guy")).to include video
     end
 
     it "should return all the videos if the keyword is empty" do
-      expect(Video.search_by_title("")).to include(@video1, @video2)
-    end    
+      expect(Video.search_by_title("")).to include(video2, video)
+    end  
   end
 
-  context "Average rating method" do
+  describe "#average_ratings" do
+    let(:video) {Fabricate(:video)}
+
     it "should return 0 if there is no review" do
-      expect(@video1.average_ratings).to eq 0
+      expect(video.average_ratings).to eq 0
     end
     it "should return the average review if there are any reviews" do
-      @video1.reviews << create(:review, rate: 2)
-      @video1.reviews << create(:review, rate: 5)
-      expect(@video1.average_ratings).to eq(3.5)
+      video.reviews << create(:review, rate: 2)
+      video.reviews << create(:review, rate: 5)
+      expect(video.average_ratings).to eq(3.5)
     end
   end
 end

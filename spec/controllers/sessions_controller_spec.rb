@@ -11,34 +11,34 @@ describe SessionsController do
 
   describe "POST create" do
     context "registered user" do
-      before {@user = create(:user)}
+      let(:user) { Fabricate(:user)}
 
       it "set session[:user_id] to user.id" do
-        post :create, email: @user.email, password: @user.password
-        expect(session[:user_id]).to eq(@user.id)
+        post :create, email: user.email, password: user.password
+        expect(session[:user_id]).to eq(user.id)
       end
 
       it "display flash message" do
-        post :create, email: @user.email, password: @user.password
+        post :create, email: user.email, password: user.password
         expect(flash[:notice]).to eq("Welcome, you are logged in")
       end       
 
       it "redirect to videos_path" do
-        post :create, email: @user.email, password: @user.password
+        post :create, email: user.email, password: user.password
         expect(response).to redirect_to videos_path
       end   
     end
 
     context "un-registered user or incorrect input" do
-      before {@user = create(:user)}
+      let(:user) { Fabricate(:user)}
 
       it "render login page" do
-        post :create, email: @user.email, password: nil
+        post :create, email: user.email, password: nil
         expect(response).to redirect_to '/login'
       end
 
       it "display error message" do
-        post :create, email: @user.email, password: nil
+        post :create, email: user.email, password: nil
         expect(flash[:error]).to eq("Email or password is incorrect")
       end
     end
