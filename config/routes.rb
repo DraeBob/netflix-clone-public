@@ -11,7 +11,9 @@ Myflix::Application.routes.draw do
   end
   resources :categories, except: [:edit, :update, :destroy]
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create] do
+    resources :queue_videos
+  end
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
