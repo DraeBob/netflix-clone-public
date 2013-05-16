@@ -14,7 +14,6 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'pry'
   gem 'pry-nav'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -30,9 +29,11 @@ gem 'jquery-rails'
 
 group :test do
   gem "shoulda-matchers"
+  gem 'faker'
+  gem 'fabrication'
 end
 
 group :development, :test do
+  gem 'pry'
   gem 'rspec-rails', '~> 2.0'
-  gem "factory_girl_rails", "~> 4.0"
 end
