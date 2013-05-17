@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    redirect_to videos_path if current_user
     @user = User.new
   end
 
