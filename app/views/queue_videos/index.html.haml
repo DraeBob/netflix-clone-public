@@ -13,43 +13,19 @@
               %th(width="20%") Rating
               %th(width="15%") Genre
               %th(width="15%") Remove
-          %tbody
-            %tr
-              %td
-                %input(type="text" value="1")
-              %td
-                = link_to "Futurama"
-              %td
-                = button_to "Play", nil, class: "btn"
-              %td
-                %select(name="")
-                  %option(value="5") 5 Stars
-                  %option(value="4") 4 Stars
-                  %option(value="3") 3 Stars
-                  %option(value="2") 2 Stars
-                  %option(value="1") 1 Star
-              %td
-                = link_to "TV Shows"
-              %td
-                = link_to "", method: :post do
-                  %i.icon-remove
-            %tr
-              %td
-                %input(type="text" value="2")
-              %td
-                = link_to "Family Guy"
-              %td
-                = button_to "Play", nil, class: "btn"
-              %td
-                %select(name="")
-                  %option(value="5") 5 Stars
-                  %option(value="4") 4 Stars
-                  %option(value="3") 3 Stars
-                  %option(value="2") 2 Stars
-                  %option(value="1") 1 Star
-              %td
-                = link_to "TV Shows"
-              %td
-                = link_to "", method: :post do
-                  %i.icon-remove
+          - @queue_videos.each do |queue_video|
+            %tbody
+              %tr
+                %td
+                  = queue_video.position
+                %td
+                  = link_to queue_video.video_title, video_path(queue_video.video)
+                %td
+                  = button_to "Play", nil, class: "btn"
+                %td= queue_video.rate
+                %td
+                  = link_to queue_video.category_names
+                %td
+                  = link_to queue_video_path(queue_video), method: :delete do
+                    %i.icon-remove
         = button_to "Update Instant Queue", nil, class: "btn"

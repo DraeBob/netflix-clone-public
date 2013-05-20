@@ -2,6 +2,7 @@ class Video < ActiveRecord::Base
   has_many :reviews
   has_many :video_categories
   has_many :categories, through: :video_categories
+  has_many :queue_videos
 
   validates :title, presence: true
   validates :description, presence: true
