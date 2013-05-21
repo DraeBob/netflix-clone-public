@@ -16,8 +16,4 @@ class QueueVideo < ActiveRecord::Base
   def category_names 
     video.categories.collect(&:name).first
   end
-
-  # def categories
-  #   video.categories
-  # end
 end
