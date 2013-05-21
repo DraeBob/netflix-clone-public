@@ -1,0 +1,31 @@
+%section.my_queue.container
+  .row
+    .span10.offset1
+      %article
+        %header
+          %h2 My Queue
+        %table.table
+          %thead
+            %tr
+              %th(width="10%") List Order
+              %th(width="30%") Video Title
+              %th(width="10%") Play
+              %th(width="20%") Rating
+              %th(width="15%") Genre
+              %th(width="15%") Remove
+          - @queue_videos.each do |queue_video|
+            %tbody
+              %tr
+                %td
+                  = queue_video.position
+                %td
+                  = link_to queue_video.video_title, video_path(queue_video.video)
+                %td
+                  = button_to "Play", nil, class: "btn"
+                %td= queue_video.rate
+                %td
+                  = link_to queue_video.category_names, videos_path
+                %td
+                  = link_to queue_video, method: :delete do
+                    %i.icon-remove
+        = button_to "Update Instant Queue", nil, class: "btn"

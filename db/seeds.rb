@@ -1,4 +1,4 @@
-comedy = Category.create(name: 'Comdey')
+comedy = Category.create(name: 'Comedy')
 cartoon = Category.create(name: 'Cartoon')
 drama = Category.create(name: 'Drama')
 family = Category.create(name: 'Family')
