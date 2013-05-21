@@ -24,7 +24,7 @@
                   = button_to "Play", nil, class: "btn"
                 %td= queue_video.rate
                 %td
-                  = link_to queue_video.category_names
+                  = link_to queue_video.category_names, videos_path
                 %td
                   = link_to queue_video, method: :delete do
                     %i.icon-remove
