@@ -15,7 +15,7 @@ Myflix::Application.routes.draw do
     #resources :queue_videos
   end
   get '/my_queue', to: "queue_videos#index"
-  resources :queue_videos, only: [:create]
+  resources :queue_videos, only: [:create, :destroy]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

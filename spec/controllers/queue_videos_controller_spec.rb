@@ -59,4 +59,36 @@ describe QueueVideosController do
       end
     end
   end
+
+  describe 'DELETE destroy' do
+
+    context "logged-in user" do
+      let!(:user) { Fabricate(:user) }
+      before{ session[:user_id] = user.id }
+      it "redirect to the my queue page" do 
+        queue_video = Fabricate(:queue_video)
+        delete :destroy, id: queue_video.id
+        expect(response).to redirect_to my_queue_path
+      end
+      it "remove the queued video" do
+        queue_video = Fabricate(:queue_video, user: user)
+        delete :destroy, id: queue_video.id
+        expect(QueueVideo.count).to eq(0)
+      end
+
+      it "the user can't remove the queued video of another user" do
+        user2 = Fabricate(:user)
+        queue_video = Fabricate(:queue_video, user: user2)
+        delete :destroy, id: queue_video.id
+        expect(QueueVideo.count).to eq(1)
+      end
+    end
+
+    context "not logged-in user" do
+      it "unauthenticated user" do
+        delete :destroy, id: 9
+        expect(response).to redirect_to root_path
+      end
+    end
+  end
 end

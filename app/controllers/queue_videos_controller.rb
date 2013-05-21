@@ -12,7 +12,15 @@ class QueueVideosController < ApplicationController
   end
 
   def destroy
-    
+    queue_video = QueueVideo.find(params[:id])
+    if current_user.queue_videos.include?(queue_video)
+      queue_video.destroy 
+      flash[:notice] = "Successfully removed the video from queue"
+      redirect_to my_queue_path
+    else
+      flash[:error] = "Something went wrong, couldn't remove this video"
+      redirect_to my_queue_path
+    end
   end
 
   private
