@@ -12,7 +12,7 @@ class QueueVideosController < ApplicationController
   end
 
   def update_queue
-    flash[:error] = "Invalid positions" and redirect_to my_queue_path and return unless queue_video_data_valid?(params[:queue_video])
+    flash[:error] = "Invalid positions" and redirect_to my_queue_path and return unless queue_video_data_valid?(params[:queue_videos])
 
     update_queue_videos(params[:queue_videos])
     current_user.reorder_queue_videos 
@@ -48,7 +48,7 @@ class QueueVideosController < ApplicationController
   def update_queue_videos(data)
     data.each do |queue_video_data|
       queue_video = QueueVideo.find(queue_video_data["id"])
-      queue_video.update_attributes(position: queue_video_data["position"]) if queue_videos.user == current_user
+      queue_video.update_attributes(position: queue_video_data["position"]) if queue_video.user == current_user
     end
   end
 end
