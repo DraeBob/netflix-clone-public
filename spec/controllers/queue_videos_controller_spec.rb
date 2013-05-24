@@ -60,6 +60,79 @@ describe QueueVideosController do
     end
   end
 
+  describe 'POST update_queue' do
+
+    context "with valid input" do
+      let!(:user) { Fabricate(:user)}
+      let!(:queue_video) { Fabricate(:queue_video, user: user, position: 1) }
+      let!(:queue_video2) { Fabricate(:queue_video, user: user, position: 2) }
+      
+      before { session[:user_id] = user.id } 
+
+      it "redirects to the my queue page" do
+        post :update_queue, queue_videos: [{id: queue_video.id, position: 2}, {id: queue_video2.id, position: 1}]
+        expect(response).to redirect_to my_queue_path    
+      end
+
+      it "reorders the queue videos" do
+        post :update_queue, queue_videos: [{id: queue_video.id, position: 2}, {id: queue_video2.id, position: 1}]
+        expect(user.queue_videos).to eq([queue_video2, queue_video]) 
+      end
+
+      it "normalizes the position numbers" do
+        post :update_queue, queue_videos: [{id: queue_video.id, position: 3}, {id: queue_video2.id, position: 2}]
+        expect(queue_video.reload.position).to eq(2)
+        expect(queue_video2.reload.position).to eq(1) 
+      end
+
+    end
+
+    context "with invalid input" do
+      let!(:user) { Fabricate(:user)}
+      let!(:queue_video) { Fabricate(:queue_video, user: user, position: 1) }
+      let!(:queue_video2) { Fabricate(:queue_video, user: user, position: 2) }
+      
+      before { session[:user_id] = user.id } 
+
+      it "does not change the queue videos" do
+        queue_video3 = Fabricate(:queue_video, user: user, position: 3)
+        post :update_queue, queue_videos: [{id: queue_video.id, position: 3}, {id: queue_video2.id, position: 2.5}, {id: queue_video3.id, position: 1}]
+        expect(user.queue_videos).to eq([queue_video, queue_video2, queue_video3]) 
+      end
+
+      it "redirect to my_queue path" do
+        post :update_queue, queue_videos: [{id: queue_video.id, position: 2.8}, {id: queue_video2.id, position: 1}]
+        expect(response).to redirect_to my_queue_path 
+      end
+
+      it "sets the error flash with eror message" do 
+        post :update_queue, queue_videos: [{id: queue_video.id, position: 2.5}, {id: queue_video2.id, position: 2}]
+        expect(flash[:error]).to be_present 
+      end
+
+    end
+
+    context "with unauthenticated user" do
+      it "redirec to root page" do
+        post :update_queue, queue_videos: [{id: 2, position: 5}, {id: 3, position: 2}]
+        expect(response).to redirect_to root_path  
+      end
+    end
+
+    context "with queue videos not belonging to the current user" do
+      it "does not change pposition of other's queue videos" do
+        bob = Fabricate(:user)
+        david = Fabricate(:user)
+        session[:user_id] = bob.id
+        queue_video = Fabricate(:queue_video, user: bob, position: 1)
+        queue_video2 = Fabricate(:queue_video, user: david, position: 2)
+        post :update_queue, queue_videos: [{id: queue_video.id, position: 2}, {id: queue_video2.id, position: 1}]
+        expect(david.queue_videos.first.position).to eq(2) 
+      end
+    end
+
+  end
+
   describe 'DELETE destroy' do
 
     context "logged-in user" do

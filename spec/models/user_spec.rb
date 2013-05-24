@@ -6,5 +6,5 @@ describe User do
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:password) }
   it { should ensure_length_of(:password).is_at_least(6) }
-  it { should have_many(:my_queued_videos).through(:queue_videos) }
+  it { should have_many(:queue_videos).order(:position) }
 end
