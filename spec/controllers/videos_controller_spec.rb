@@ -1,26 +1,25 @@
 require 'spec_helper'
 
 describe VideosController do
+  before { set_current_user }
+
   describe "GET show" do
-    let!(:user) { Fabricate(:user)}
     let!(:video) {Fabricate(:video)}
 
     context "When user is not logged in" do
-      it "assigns the requested video to the @video" do
+      before { clear_current_user }
+      it "assigns the requested nil to the @video" do
         get :show, id: video
         assigns(:video).should == nil
       end
 
-      it "render show tempalte" do
+      it "redirects to root path" do
         get :show, id: video
-        response.should_not render_template :show
+        response.should redirect_to root_path
       end
     end
 
-    context "When user is logged in" do
-      before do 
-        session[:user_id] = user.id
-      end       
+    context "When user is logged in" do      
       it "assigns the requested video to the @video" do
         get :show, id: video
         assigns(:video).should == video
@@ -35,10 +34,10 @@ describe VideosController do
   end
 
   describe "POST search" do
-    let!(:user) { Fabricate(:user)}
     let!(:video) {Fabricate(:video)}
 
     context "When user is not logged in" do
+      before { clear_current_user }
       it "renders the search template" do
         post :search, search_term: video.title
         response.should_not render_template :search
@@ -46,9 +45,6 @@ describe VideosController do
     end
 
     context "When user is logged in" do
-      before do 
-        session[:user_id] = user.id
-      end  
       it "return empty if search term does not match" do
         post :search, search_term: "dffsfdfdsf"
         assigns(:videos).should == []

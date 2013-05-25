@@ -41,8 +41,8 @@ describe Video do
       expect(video.average_ratings).to eq 0
     end
     it "should return the average review if there are any reviews" do
-      video.reviews << create(:review, rate: 2)
-      video.reviews << create(:review, rate: 5)
+      video.reviews << Fabricate(:review, body: "aaa", rate: 2)
+      video.reviews << Fabricate(:review, body: "aaa", rate: 5)
       expect(video.average_ratings).to eq(3.5)
     end
   end

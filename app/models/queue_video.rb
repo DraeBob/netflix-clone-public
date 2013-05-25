@@ -3,12 +3,9 @@ class QueueVideo < ActiveRecord::Base
   belongs_to :user
 
   delegate :categories, to: :video
+  delegate :title, to: :video, prefix: :video
 
   validates_numericality_of :position, {only_integer: true}
-
-  def video_title
-    video.title
-  end
 
   def rate
     review.rate if review
@@ -18,7 +15,7 @@ class QueueVideo < ActiveRecord::Base
     if review
       review.update_column(:rate, new_rate)
     else
-      review = Review.new(user_id: user.id, video_id: video.id, rate: new_rate)
+      review = Review.new(user: user, video: video, rate: new_rate)
       review.save(validate: false)
     end
   end
