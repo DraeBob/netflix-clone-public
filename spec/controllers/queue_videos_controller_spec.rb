@@ -62,8 +62,11 @@ describe QueueVideosController do
 
   describe 'POST update_queue' do
     context "with valid input" do
-      let!(:queue_video) { Fabricate(:queue_video, user: current_user, position: 1) }
-      let!(:queue_video2) { Fabricate(:queue_video, user: current_user, position: 2) }
+      let!(:video){ Fabricate(:video)}
+      let!(:queue_video) { Fabricate(:queue_video, user: current_user, video: video, position: 1) }
+      let!(:queue_video2) { Fabricate(:queue_video, user: current_user, video: video, position: 2) }
+
+      #let!(:review) { Fabricate(:review, user: current_user, video: video, rate: 2)}
       
       it "redirects to the my queue page" do
         post :update_queue, queue_videos: [{id: queue_video.id, position: 2}, {id: queue_video2.id, position: 1}]
@@ -84,8 +87,9 @@ describe QueueVideosController do
     end
 
     context "with invalid input" do
-      let!(:queue_video) { Fabricate(:queue_video, user: current_user, position: 1) }
-      let!(:queue_video2) { Fabricate(:queue_video, user: current_user, position: 2) }
+      let!(:video){ Fabricate(:video)}
+      let!(:queue_video) { Fabricate(:queue_video, user: current_user, video: video, position: 1) }
+      let!(:queue_video2) { Fabricate(:queue_video, user: current_user, video: video, position: 2) }
       
       it "does not change the queue videos" do
         post :update_queue, queue_videos: [{id: queue_video.id, position: 3}, {id: queue_video2.id, position: 2.5}]
@@ -118,8 +122,9 @@ describe QueueVideosController do
         bob = Fabricate(:user)
         david = Fabricate(:user)
         session[:user_id] = bob.id
-        queue_video = Fabricate(:queue_video, user: bob, position: 1)
-        queue_video2 = Fabricate(:queue_video, user: david, position: 2)
+        video = Fabricate(:video)
+        queue_video = Fabricate(:queue_video, user: bob, video: video, position: 1)
+        queue_video2 = Fabricate(:queue_video, user: david, video: video, position: 2)
         post :update_queue, queue_videos: [{id: queue_video.id, position: 2}, {id: queue_video2.id, position: 1}]
         expect(david.queue_videos.first.position).to eq(2) 
       end
