@@ -26,13 +26,36 @@ describe QueueVideo do
     end
   end
 
+  describe "#rate=" do
+    let!(:user){ Fabricate(:user)}
+    let!(:video){ Fabricate(:video)}
+    let!(:queue_video){ Fabricate(:queue_video, user: user, video: video) }
+
+    it "change the rate of the review if the review is present" do
+      review = Fabricate(:review, user:user, video: video, rate: 2)
+      queue_video.rate = 4
+      expect(Review.first.rate).to eq(4)
+    end
+
+    it "clears the rate of the review if the review is present" do
+      review = Fabricate(:review, user:user, video: video, rate: 2)
+      queue_video.rate = nil
+      expect(Review.first.rate).to be_nil
+    end
+
+    it "creates the review with rate if the review is not present" do
+      queue_video.rate = 3
+      expect(Review.first.rate).to eq(3)
+    end
+  end
+
   describe "#category_name" do
-    it "return the name of category of the video" do
+    it "return the first name of categories of the video" do
       com = Fabricate(:category, name: 'Comedy')
       cat = Fabricate(:category)
       vid = Fabricate(:video, categories: [com,cat])
       queue_video = Fabricate(:queue_video, video: vid)
-      expect(queue_video.category_names).to eq(["Comedy","Family"])
+      expect(queue_video.category_names).to eq("Comedy")
     end
   end
 
