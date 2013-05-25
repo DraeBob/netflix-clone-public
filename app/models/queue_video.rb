@@ -11,11 +11,25 @@ class QueueVideo < ActiveRecord::Base
   end
 
   def rate
-    review = Review.where(user_id: user.id, video_id: video.id).first
     review.rate if review
+  end
+
+  def rate=(new_rate)
+    if review
+      review.update_column(:rate, new_rate)
+    else
+      review = Review.new(user_id: user.id, video_id: video.id, rate: new_rate)
+      review.save(validate: false)
+    end
   end
 
   def category_names 
     video.categories.collect(&:name).first
+  end
+
+  private 
+
+  def review
+    @review ||= Review.where(user_id: user.id, video_id: video.id).first
   end
 end

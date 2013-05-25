@@ -23,7 +23,7 @@
                     = link_to queue_video.video_title, video_path(queue_video.video)
                   %td
                     = button_to "Play", nil, class: "btn"
-                  %td= queue_video.rate
+                  %td= select_tag "queue_videos[][rate]", options_for_video_reviews(queue_video.rate), include_blank: true
                   %td
                     = link_to queue_video.category_names, videos_path
                   %td

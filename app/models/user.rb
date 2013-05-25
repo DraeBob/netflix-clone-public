@@ -7,9 +7,15 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: {minimum: 6}
 
-  def reorder_queue_videos 
-    queue_videos.each_with_index do |queue_video, index|
-      queue_video.update_attributes(position: index + 1)
+    def normalize_queue_item_positions 
+      queue_videos.each_with_index do |queue_video, index|
+        queue_video.update_attributes(position: index + 1)
+      end
+    end
+
+  def rate_queue_videos
+    queue_videos.each_with_index do |queue_video, rate|
+      queue_video.update_attributes(rate: rate)
     end
   end
 end

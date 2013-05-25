@@ -95,9 +95,8 @@ describe QueueVideosController do
       before { session[:user_id] = user.id } 
 
       it "does not change the queue videos" do
-        queue_video3 = Fabricate(:queue_video, user: user, position: 3)
-        post :update_queue, queue_videos: [{id: queue_video.id, position: 3}, {id: queue_video2.id, position: 2.5}, {id: queue_video3.id, position: 1}]
-        expect(user.queue_videos).to eq([queue_video, queue_video2, queue_video3]) 
+        post :update_queue, queue_videos: [{id: queue_video.id, position: 3}, {id: queue_video2.id, position: 2.5}]
+        expect(queue_video.reload.position).to eq(1) 
       end
 
       it "redirect to my_queue path" do
@@ -154,6 +153,13 @@ describe QueueVideosController do
         queue_video = Fabricate(:queue_video, user: user2)
         delete :destroy, id: queue_video.id
         expect(QueueVideo.count).to eq(1)
+      end
+
+      it "normalize the remaining queue videos" do
+        queue_video = Fabricate(:queue_video, user: user, position: 1)
+        queue_video2 = Fabricate(:queue_video, user: user, position: 2)
+        delete :destroy, id: queue_video.id
+        expect(QueueVideo.first.position).to eq(1)
       end
     end
 

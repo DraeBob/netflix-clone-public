@@ -17,7 +17,8 @@
     .span10.offset1
       = bootstrap_form_for([@video,@review], help: :block) do |f|
         %fieldset
-          =f.select :rate, [["5 Stars", 5],["4 Stars", 4],["3 Stars", 3],["2 Stars", 2],["1 Star", 1]], label: 'Rate this video'
+          %label Rate this video
+          =f.select :rate, options_for_video_reviews
           = f.alert_message "Please fix the errors below."
           = f.text_area :body, label:'Write Review', rows: 5, class: 'span5'
           %fieldset.actions.clearfix
