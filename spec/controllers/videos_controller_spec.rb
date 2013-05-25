@@ -37,10 +37,8 @@ describe VideosController do
     let!(:video) {Fabricate(:video)}
 
     context "When user is not logged in" do
-      before { clear_current_user }
-      it "renders the search template" do
-        post :search, search_term: video.title
-        response.should_not render_template :search
+      it_behaves_like "require_login" do
+        let(:action) { post :search, search_term: video.title }
       end
     end
 

@@ -6,9 +6,8 @@ describe ReviewsController do
     let!(:video) {Fabricate(:video)}
 
     context "When not logged in" do
-      it "cannot review" do
-        post :create, video_id: video, review: Fabricate.attributes_for(:review)
-        response.should redirect_to root_path
+      it_behaves_like "require_login" do
+        let(:action) { post :create, video_id: video, review: Fabricate.attributes_for(:review) }
       end
     end
 

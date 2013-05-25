@@ -10,11 +10,9 @@ describe QueueVideosController do
       get :index
       expect(assigns(:queue_videos)).to match_array([queue_video, queue_video2])
     end
-  
-    it "when not looged in, redirect to root page" do
-      clear_current_user
-      get :index
-      expect(response).to redirect_to root_path
+
+    it_behaves_like "require_login" do
+      let(:action) { get :index }
     end
   end
 
@@ -52,10 +50,8 @@ describe QueueVideosController do
       end
     end
     context "not logged-in user" do
-      it "redirect to root path" do
-        clear_current_user
-        post :create, video_id: 5
-        expect(response).to redirect_to root_path
+      it_behaves_like "require_login" do
+        let(:action) { post :create, video_id: 5}
       end
     end
   end
@@ -109,10 +105,8 @@ describe QueueVideosController do
     end
 
     context "with unauthenticated user" do
-      it "redirec to root page" do
-        clear_current_user
-        post :update_queue, queue_videos: [{id: 2, position: 5}, {id: 3, position: 2}]
-        expect(response).to redirect_to root_path  
+      it_behaves_like "require_login" do
+        let(:action) { post :update_queue, queue_videos: [{id: 2, position: 5}, {id: 3, position: 2}] }
       end
     end
 
@@ -140,6 +134,7 @@ describe QueueVideosController do
         delete :destroy, id: queue_video.id
         expect(response).to redirect_to my_queue_path
       end
+
       it "remove the queued video" do
         queue_video = Fabricate(:queue_video, user: current_user)
         delete :destroy, id: queue_video.id
@@ -162,10 +157,8 @@ describe QueueVideosController do
     end
 
     context "not logged-in user" do
-      it "unauthenticated user" do
-        clear_current_user 
-        delete :destroy, id: 9
-        expect(response).to redirect_to root_path
+      it_behaves_like "require_login" do
+        let(:action) { delete :destroy, id: 9 }
       end
     end
   end
