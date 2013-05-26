@@ -8,7 +8,6 @@ class VideosController < ApplicationController
   def show 
     @video = Video.find(params[:id])
     @queue_videos = current_user.queue_videos
-    #binding.pry
     @review = Review.new
   end
 

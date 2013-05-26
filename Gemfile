@@ -37,4 +37,6 @@ group :development, :test do
   gem 'fabrication'
   gem 'pry'
   gem 'rspec-rails', '~> 2.0'
+  gem 'launchy'
+  gem 'database_cleaner'
 end
