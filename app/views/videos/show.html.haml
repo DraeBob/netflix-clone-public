@@ -10,7 +10,8 @@
         %p.pull-left= @video.description
         .actions
           %a.btn.btn-primary{:href => "#"} Watch Now
-          =link_to "+ My Queue", queue_videos_path(video_id: @video.id), method: :post, class: "btn"
+          -unless @queue_videos.collect(&:video_id).include?(@video.id)
+            =link_to "+ My Queue", queue_videos_path(video_id: @video.id), method: :post, class: "btn"
 
 %section.reviews.container
   .row
