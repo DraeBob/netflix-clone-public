@@ -8,6 +8,7 @@ feature 'User signs in' do
     fill_in "Password", with: "password"
     click_button "Sign in"
     page.should have_content("Welcome, you are logged in")
+    page.should have_content "John Smith"
   end
 
   scenario "with incorrect input" do

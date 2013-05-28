@@ -15,9 +15,6 @@ feature 'Video show page' do
 
     visit video_path(@video)
     page.should have_content("+ My Queue")
-
-    click_on("+ My Queue")
-
   end
 
   scenario "Hide my queue button if already added to my queue" do
