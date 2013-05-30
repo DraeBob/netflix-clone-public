@@ -31,6 +31,12 @@ describe VideosController do
       end
     end
 
+    it "sets @reviews for authenticated user" do
+      review1 = Fabricate(:review, video: video)
+      review2 = Fabricate(:review, video: video)
+      get :show, id: video
+      assigns(:reviews).should =~ [review1,review2]
+    end
   end
 
   describe "POST search" do
@@ -62,6 +68,5 @@ describe VideosController do
         response.should render_template :search
       end        
     end
-    
   end
 end

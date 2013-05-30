@@ -8,3 +8,16 @@ describe User do
   it { should ensure_length_of(:password).is_at_least(6) }
   it { should have_many(:queue_videos).order(:position) }
 end
+
+describe "#queued_already?" do
+  let!(:user){ Fabricate(:user)}
+  let!(:video){ Fabricate(:video)}
+  it "returns true if user already queued the video" do
+    Fabricate(:queue_video, user: user, video: video)
+    user.queued_already?(video).should be_true
+  end
+
+  it "return false if user has not yet queued the video" do
+    user.queued_already?(video).should be_false
+  end
+end

@@ -8,7 +8,7 @@ describe Video do
     Video.first.should == video
   end
 
-  it { should have_many(:reviews) }
+  it { should have_many(:reviews).order("created_at desc") }
   it { should have_many(:categories).through(:video_categories) }
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:description) }
@@ -35,6 +35,7 @@ describe Video do
   end
 
   describe "#average_ratings" do
+    let(:user) {Fabricate(:user)}
     let(:video) {Fabricate(:video)}
 
     it "should return 0 if there is no review" do
