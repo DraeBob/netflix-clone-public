@@ -10,7 +10,7 @@ Myflix::Application.routes.draw do
     resources :reviews, only: [:create]
   end
   resources :categories, except: [:edit, :update, :destroy]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:show, :new, :create]
 
   get 'my_queue', to: "queue_videos#index"
   resources :queue_videos, only: [:create, :destroy]
