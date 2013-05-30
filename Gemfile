@@ -28,12 +28,15 @@ gem 'jquery-rails'
 
 
 group :test do
-  gem "shoulda-matchers"
-  gem 'faker'
-  gem 'fabrication'
+  gem 'capybara'
 end
 
 group :development, :test do
+  gem "shoulda-matchers"
+  gem 'faker'
+  gem 'fabrication'
   gem 'pry'
   gem 'rspec-rails', '~> 2.0'
+  gem 'launchy'
+  gem 'database_cleaner'
 end

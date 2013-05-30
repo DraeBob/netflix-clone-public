@@ -3,6 +3,7 @@ require 'spec_helper'
 describe QueueVideo do 
   it { should belong_to(:user)}
   it { should belong_to(:video)}
+  it { should validate_numericality_of(:position).only_integer}
 
   describe "#video_title" do
     it "return the video title" do
@@ -49,7 +50,7 @@ describe QueueVideo do
     end
   end
 
-  describe "#category_name" do
+  describe "#category_names" do
     it "return the first name of categories of the video" do
       com = Fabricate(:category, name: 'Comedy')
       cat = Fabricate(:category)
