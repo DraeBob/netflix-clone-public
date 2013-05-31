@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :reviews
   has_many :queue_videos, order: :position
+  has_many :followerships
+  has_many :followers, through: :followerships
  
   validates :fullname, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
