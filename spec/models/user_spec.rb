@@ -7,6 +7,8 @@ describe User do
   it { should validate_presence_of(:password) }
   it { should ensure_length_of(:password).is_at_least(6) }
   it { should have_many(:queue_videos).order(:position) }
+  it { should have_many(:followerships) }
+  it { should have_many(:followers).through(:followerships) }
 end
 
 describe "#queued_already?" do
