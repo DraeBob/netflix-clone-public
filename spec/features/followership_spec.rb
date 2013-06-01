@@ -18,6 +18,9 @@ feature 'Followership' do
     click_link "Follow"
     page.should have_content "Followership created"
     page.should have_content @user2.fullname
-    # Need to add unfollow test here #
+    within(:xpath, "//tr[contains(.,'#{@user2.fullname}')]") do
+      find("a[data-method='delete']").click
+    end
+    page.should_not have_content @user2.fullname
   end
 end
