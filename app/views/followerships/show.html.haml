@@ -9,13 +9,13 @@
         %th(width="20%") Followers
         %th(width="30%") Unfollow
     %tbody
-      - current_user.followerships.each do |f|
+      - @followerships.each do |followership|
         %tr
           %td
-            %img(src="http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest('knwang@gmail.com'.downcase)}?s=40")
-            = link_to f.follower.fullname, user_path(f.follower)
+            %img(src="http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest('followership.follower.email'.downcase)}?s=40")
+            = link_to followership.follower.fullname, user_path(followership.follower)
           %td.extra-padding 20
           %td.extra-padding 30
           %td.extra-padding
-            = link_to f, method: :delete do
+            = link_to followership, method: :delete do
               %i.icon-remove

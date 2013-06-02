@@ -1,26 +1,28 @@
 require 'spec_helper'
 
 feature 'Followership' do
-  background do 
-    @user1 = Fabricate(:user, fullname: "John Smith", email: "johnsmith@example.com", password: "password") 
-    @user2 = Fabricate(:user, fullname: "Bob Smith", email: "bobsmith@example.com", password: "password")
-    @cat = Fabricate(:category, name: "Comedy")
-    @video1 = Fabricate(:video, title: "Family Guy", description: "description", categories: [@cat])
-    @video2 = Fabricate(:video, title: "Futurama", description: "description", categories: [@cat])
-    @review1 = Fabricate(:review, rate: 3, body: "Damn", video: @video1, user: @user2)
-  end
+  let(:ann){ Fabricate(:user) }
+  let(:bob) { Fabricate(:user) }
+  let(:cat) { Fabricate(:category, name: "Comedy")}
+  let(:video) { Fabricate(:video, categories: [cat]) }
+  let(:review) { Fabricate(:review, video: video, user: bob) }
 
-  scenario "@user1 folllow and unfollow @user2" do
-    sign_in(@user1)
-    visit video_path(@video1)
-    page.should have_content @user2.fullname
-    click_on @user2.fullname
+  scenario "ann folllow and unfollow bob" do
+    sign_in(ann)
+    visit video_path(video)
+    page.should have_content bob.fullname
+    click_on bob.fullname
+
     click_link "Follow"
     page.should have_content "Followership created"
-    page.should have_content @user2.fullname
-    within(:xpath, "//tr[contains(.,'#{@user2.fullname}')]") do
+    page.should have_content bob.fullname
+    unfollow(bob)
+  end
+
+  def unfollow(user)
+    within(:xpath, "//tr[contains(.,'#{user.fullname}')]") do
       find("a[data-method='delete']").click
     end
-    page.should_not have_content @user2.fullname
+    page.should_not have_content user.fullname
   end
 end
