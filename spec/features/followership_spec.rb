@@ -1,20 +1,20 @@
 require 'spec_helper'
 
 feature 'Followership' do
-  let(:ann){ Fabricate(:user) }
-  let(:bob) { Fabricate(:user) }
-  let(:cat) { Fabricate(:category, name: "Comedy")}
-  let(:video) { Fabricate(:video, categories: [cat]) }
-  let(:review) { Fabricate(:review, video: video, user: bob) }
-
   scenario "ann folllow and unfollow bob" do
+    ann = Fabricate(:user) 
+    bob = Fabricate(:user) 
+    cat = Fabricate(:category, name: "Comedy")
+    video = Fabricate(:video, categories: [cat]) 
+    review = Fabricate(:review, video: video, user: bob)   
+
     sign_in(ann)
     visit video_path(video)
     page.should have_content bob.fullname
     click_on bob.fullname
 
     click_link "Follow"
-    page.should have_content "Followership created"
+    page.should have_content "following relationships created"
     page.should have_content bob.fullname
     unfollow(bob)
   end

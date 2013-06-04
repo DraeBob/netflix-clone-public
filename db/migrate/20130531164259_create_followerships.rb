@@ -1,7 +1,7 @@
 class CreateFollowerships < ActiveRecord::Migration
   def up
     create_table :followerships do |t|
-      t.integer :user_id, :follower_id
+      t.integer :follower_id, :followee_id
       t.timestamps
     end
   end

@@ -1,17 +1,16 @@
 class FollowershipsController < ApplicationController
   before_filter :require_user
 
-  def show
-    @followerships = current_user.followerships
+  def index
+    @followerships = current_user.following_relationships
   end
 
   def create
-    @user = User.find(params[:id])
-    if current_user != @user
-      @followership = current_user.followerships.build(follower_id: params[:follower_id])
-      @followership.save
-      flash[:notice] = "Followership created"
-      redirect_to followership_path(current_user)
+    followee = User.find(params[:followee_id])
+    if current_user != followee || current_user.follows?(followee)
+      Followership.create(follower: current_user, followee: followee)
+      flash[:notice] = "following relationships created"
+      redirect_to followerships_path
     else
       flash[:error] = "You cannot follow yourself"
       render 'users/show'
@@ -19,9 +18,9 @@ class FollowershipsController < ApplicationController
   end
 
   def destroy
-    @followership = current_user.followerships.find(params[:id])
-    @followership.destroy if current_user.followerships.include?(@followership)
+    @followership = Followership.find(params[:id])
+    @followership.destroy if current_user == @followership.follower
     flash[:notice] = "Successfully deleted"
-    redirect_to followership_path(current_user)
+    redirect_to followerships_path
   end
 end
