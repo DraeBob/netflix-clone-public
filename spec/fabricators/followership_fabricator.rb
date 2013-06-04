@@ -1,0 +1,3 @@
+Fabricator(:followership) do
+
+end

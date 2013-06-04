@@ -34,6 +34,6 @@
                 %span 
                   Rating : #{review.rate} / 5
                 %p 
-                  by #{review.user.fullname}  
+                  by #{ link_to review.user.fullname, user_path(review.user) }
               .span8
                 %p= review.body
