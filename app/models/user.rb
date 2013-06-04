@@ -29,4 +29,8 @@ class User < ActiveRecord::Base
   def follows?(a_followee)
     following_relationships.map(&:followee).include?(a_followee)
   end
+
+  def can_follow?(a_followee)
+    !(self.follows?(a_followee) || self == a_followee)
+  end
 end

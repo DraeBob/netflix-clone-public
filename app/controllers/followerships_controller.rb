@@ -7,7 +7,7 @@ class FollowershipsController < ApplicationController
 
   def create
     followee = User.find(params[:followee_id])
-    if current_user != followee || current_user.follows?(followee)
+    if current_user.can_follow?(followee)
       Followership.create(follower: current_user, followee: followee)
       flash[:notice] = "following relationships created"
       redirect_to followerships_path
@@ -18,8 +18,8 @@ class FollowershipsController < ApplicationController
   end
 
   def destroy
-    @followership = Followership.find(params[:id])
-    @followership.destroy if current_user == @followership.follower
+    followership = Followership.find(params[:id])
+    followership.destroy if current_user == followership.follower
     flash[:notice] = "Successfully deleted"
     redirect_to followerships_path
   end
