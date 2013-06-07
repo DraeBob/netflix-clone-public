@@ -33,4 +33,9 @@ class User < ActiveRecord::Base
   def can_follow?(a_followee)
     !(self.follows?(a_followee) || self == a_followee)
   end
+
+  def token
+    self.token = SecureRandom.urlsafe_base64
+  end
+
 end

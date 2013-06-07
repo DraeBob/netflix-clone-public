@@ -5,4 +5,9 @@ class AppMailer < ActionMailer::Base
     @user = user
     mail to: user.email, subject: "You registered tealeaf myflix !"
   end
+
+  def password_reset_confirmation(user)
+    @user = user.token
+    mail to: user.email, subject: "Password reset request - myflix!"
+  end
 end
