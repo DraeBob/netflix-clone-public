@@ -55,6 +55,8 @@ describe UsersController do
     end
 
     context "email sending" do
+      after { ActionMailer::Base.deliveries.clear }
+
       it "sends out the email" do
         post :create, user: Fabricate.attributes_for(:user)
         expect(ActionMailer::Base.deliveries).not_to be_empty
@@ -62,14 +64,17 @@ describe UsersController do
 
       it "sends out to the right recipient" do
         post :create, user: Fabricate.attributes_for(:user)
-        message = ActionMailer::Base.deliveries.last
-        expect(message.to).to eq([User.last.email])
+        expect(ActionMailer::Base.deliveries.last.to).to eq([User.last.email])
       end
 
       it "has the right content" do
         post :create, user: Fabricate.attributes_for(:user)
-        message = ActionMailer::Base.deliveries.last
-        expect(message.body).to include(User.last.fullname)
+        expect(ActionMailer::Base.deliveries.last.body).to include(User.last.fullname)
+      end
+
+      it "not sends out the email with invalid input" do
+        post :create, user: Fabricate.attributes_for(:user, password: nil)
+        expect(ActionMailer::Base.deliveries).to be_empty
       end
     end
   end
