@@ -22,10 +22,10 @@ Myflix::Application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  get '/forgot_password', to: 'users#forgot_password'
-  put '/password_reset_token', to: 'users#password_reset_token'
-  get '/confirm_password_reset', to: 'users#confirm_password_reset'
-  get '/reset_password/:token', to: 'users#reset_password', as: :reset_password
-  put '/reset_password/:token', to: 'users#reset_password'
-  get '/invalid_token', to: 'users#invalid_token'
+  get '/forgot_password', to: 'forgot_passwords#new'
+  resources :forgot_passwords, only: [:create]
+  get 'forgot_password_confirmation', to: 'forgot_passwords#confirm'
+
+  resources :password_resets, only: [:show, :create]
+  get 'expired_token', to: 'password_resets#expired_token'
 end

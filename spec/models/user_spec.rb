@@ -10,30 +10,35 @@ describe User do
 
   it { should have_many(:following_relationships) }
   it { should have_many(:followed_relationships) }
-end
 
-describe "#queued_already?" do
-  let!(:user){ Fabricate(:user)}
-  let!(:video){ Fabricate(:video)}
-  it "returns true if user already queued the video" do
-    Fabricate(:queue_video, user: user, video: video)
-    user.queued_already?(video).should be_true
+  it "generates a random token when user is created" do
+    alice = Fabricate(:user)
+    expect(alice.token).to be_present
   end
 
-  it "return false if user has not yet queued the video" do
-    user.queued_already?(video).should be_false
-  end
-end
+  describe "#queued_already?" do
+    let!(:user){ Fabricate(:user)}
+    let!(:video){ Fabricate(:video)}
+    it "returns true if user already queued the video" do
+      Fabricate(:queue_video, user: user, video: video)
+      user.queued_already?(video).should be_true
+    end
 
-describe "#follows?" do
-  let!(:alice){ Fabricate(:user)}
-  let!(:bob){ Fabricate(:user)}
-  it "returns true if the user has a following relationship with an user" do
-    Fabricate(:followership, follower: alice, followee: bob)
-    expect(alice.follows?(bob)).to be_true
+    it "return false if user has not yet queued the video" do
+      user.queued_already?(video).should be_false
+    end
   end
-  it "returns false if the user does not have a following relationship with an user" do
-    Fabricate(:followership, follower: bob, followee: alice)
-    expect(alice.follows?(bob)).to be_false
+
+  describe "#follows?" do
+    let!(:alice){ Fabricate(:user)}
+    let!(:bob){ Fabricate(:user)}
+    it "returns true if the user has a following relationship with an user" do
+      Fabricate(:followership, follower: alice, followee: bob)
+      expect(alice.follows?(bob)).to be_true
+    end
+    it "returns false if the user does not have a following relationship with an user" do
+      Fabricate(:followership, follower: bob, followee: alice)
+      expect(alice.follows?(bob)).to be_false
+    end
   end
 end

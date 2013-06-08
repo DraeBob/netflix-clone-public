@@ -21,28 +21,4 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
-  # def forgot_password
-  # end
-
-  def password_reset_token
-    user = User.find_by_email(params[:email])
-    if user
-      user.token
-      AppMailer.password_reset_confirmation(user).deliver
-      redirect_to confirm_password_reset_path
-    else
-      flash[:error] = "Please enter correct email address."
-      render :forgot_password
-    end
-  end
-
-  # def confirm_password_reset
-  # end
-
-  def reset_password
-  end
-
-  def invalid_token
-  end
 end
