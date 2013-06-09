@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: {minimum: 6}
 
+  before_create :generate_token
+
   def normalize_queue_item_positions 
     queue_videos.each_with_index do |queue_video, index|
       queue_video.update_attributes(position: index + 1)
@@ -33,4 +35,9 @@ class User < ActiveRecord::Base
   def can_follow?(a_followee)
     !(self.follows?(a_followee) || self == a_followee)
   end
+
+  def generate_token
+    self.token = SecureRandom.urlsafe_base64
+  end
+
 end
