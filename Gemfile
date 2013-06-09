@@ -29,6 +29,7 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara'
+  gem 'capybara-email'
 end
 
 group :development, :test do
