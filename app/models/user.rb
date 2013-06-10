@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   has_many :following_relationships, class_name: "Followership", foreign_key: "follower_id"
   has_many :followed_relationships, class_name: "Followership", foreign_key: "followee_id"
  
+  has_many :sent_invitations, class_name: 'Invitation', foreign_key: 'inviter_id'
+  belongs_to :invitation
+
   validates :fullname, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: {minimum: 6}
@@ -39,5 +42,6 @@ class User < ActiveRecord::Base
   def generate_token
     self.token = SecureRandom.urlsafe_base64
   end
+
 
 end

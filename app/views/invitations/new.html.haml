@@ -1,15 +1,30 @@
 %section.invite.container
   .row
     .span10.offset1
-      = form_tag invitations_path do
+      = bootstrap_form_for(@invitation, html: { class: 'form-horizontal' }, help: :block) do |f|
         %header
           %h1 Invite a friend to join MyFlix!
         %fieldset
-          = label_tag :fullname, "Friend's Name"
-          = text_field_tag :fullname
-          = label_tag :email, "Friend's Email Address"
-          = text_field_tag :email
-          = label_tag :message, "Invitation Message"
-          = text_area_tag :message, nil, class: 'span4', rows: 6, placeholder: "Please join this really cool site!" 
-        %fieldset.action
-          %input(type="submit" value="Send Invitation" class="btn")
+          = f.alert_message "Please fix the errors below."
+          = f.text_field :friend_name, label: "Friend's Name"
+          = f.text_field :friend_email, label: "Friend's Email Address"
+          = f.text_area :message, label: "Invitation Message", class: 'span4', rows: 6, placeholder: "Please join this really cool site!"
+          = f.actions do
+            = f.primary 'Send Invitation', disable_with: 'Saving...' 
+
+
+/ %section.invite.container
+/   .row
+/     .span10.offset1
+/       = form_tag invitations_path do
+/         %header
+/           %h1 Invite a friend to join MyFlix!
+/         %fieldset
+/           = label_tag :friend_name, "Friend's Name"
+/           = text_field_tag :friend_name
+/           = label_tag :friend_email, "Friend's Email Address"
+/           = text_field_tag :friend_email
+/           = label_tag :message, "Invitation Message"
+/           = text_area_tag :message, nil, class: 'span4', rows: 6, placeholder: "Please join this really cool site!" 
+/         %fieldset.action
+/           %input(type="submit" value="Send Invitation" class="btn")
