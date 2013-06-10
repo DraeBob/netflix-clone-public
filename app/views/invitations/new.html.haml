@@ -1,0 +1,15 @@
+%section.invite.container
+  .row
+    .span10.offset1
+      = form_tag invitations_path do
+        %header
+          %h1 Invite a friend to join MyFlix!
+        %fieldset
+          = label_tag :fullname, "Friend's Name"
+          = text_field_tag :fullname
+          = label_tag :email, "Friend's Email Address"
+          = text_field_tag :email
+          = label_tag :message, "Invitation Message"
+          = text_area_tag :message, nil, class: 'span4', rows: 6, placeholder: "Please join this really cool site!" 
+        %fieldset.action
+          %input(type="submit" value="Send Invitation" class="btn")
