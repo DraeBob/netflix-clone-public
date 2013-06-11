@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Tokenable
+
   has_secure_password
   has_many :reviews, order: "created_at desc"
   has_many :queue_videos, order: :position
@@ -13,7 +15,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: {minimum: 6}
 
-  before_create :generate_token
+  #validates_presence_of :invitation_id, message: 'is required'
+  attr_accessible :invitation_token
 
   def normalize_queue_item_positions 
     queue_videos.each_with_index do |queue_video, index|
@@ -39,9 +42,16 @@ class User < ActiveRecord::Base
     !(self.follows?(a_followee) || self == a_followee)
   end
 
-  def generate_token
-    self.token = SecureRandom.urlsafe_base64
+  def invitation_token
+    if invitation
+      invitation.token 
+    else
+      invitation.token = nil
+    end
   end
 
+  def invitation_token=(token)
+    self.invitation = Invitation.find_by_token(token)
+  end 
 
 end

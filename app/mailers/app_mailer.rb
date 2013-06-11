@@ -11,10 +11,9 @@ class AppMailer < ActionMailer::Base
     mail to: user.email, subject: "Password reset request - myflix!"
   end
 
-  def invite_friend(inviter, invitation, register_url)
+  def invite_friend(inviter, invitation)
     @inviter = inviter
     @invitation = invitation
-    @new_user_path = register_url
     mail to: invitation.friend_email, subject: "Invitation to join myflix!"
   end
 end

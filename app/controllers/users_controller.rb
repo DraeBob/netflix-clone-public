@@ -7,7 +7,12 @@ class UsersController < ApplicationController
 
   def new
     redirect_to videos_path if current_user
-    @user = User.new
+    # @user = User.new
+    # if invitation_token
+      @user = User.new(invitation_token: params[:invitation_token])
+      @user.email = @user.invitation.friend_email if @user.invitation
+    # end
+    
   end
 
   def create
