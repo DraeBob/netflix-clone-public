@@ -4,37 +4,40 @@ describe InvitationsController do
   describe "POST create" do
     context "correct input" do
       before { set_current_user }
+      after { ActionMailer::Base.deliveries.clear }
 
       it "redirect to root path" do
-        post :create, name:"Bob", friend_email: "alice@example.com", message: "Hello Bob"
+        post :create, invitation: Fabricate.attributes_for(:invitation)
         expect(response).to redirect_to root_path
       end
 
       it "send the invitation" do
-        post :create, name:"Bob", friend_email: "alice@example.com", message: "Hello Bob"
+        post :create, invitation: Fabricate.attributes_for(:invitation)
         expect(ActionMailer::Base.deliveries).not_to be_empty
       end
 
       it "send invitation to to the right friend" do
-        post :create, name:"Bob", friend_email: "alice@example.com", message: "Hello Bob"
-        expect(ActionMailer::Base.deliveries.last.to).to eq(["alice@example.com"])
+        post :create, invitation: Fabricate.attributes_for(:invitation)
+        expect(ActionMailer::Base.deliveries.last.to).to eq([Invitation.first.friend_email])
       end
       it "send right message to the friend" do
-        post :create, name:"Bob", friend_email: "alice@example.com", message: "Hello Bob"
-        expect(ActionMailer::Base.deliveries.last.body).to include("Hello Bob")
+        post :create, invitation: Fabricate.attributes_for(:invitation)
+        expect(ActionMailer::Base.deliveries.last.body).to include(Invitation.first.message)
       end
     end
 
     context "incorrect input" do
       before { set_current_user }
+      after { ActionMailer::Base.deliveries.clear }
 
       it "cannot invite friend who is already in myflix" do
         alice = Fabricate(:user)
-        post :create, name:"Alice", friend_email: alice.email, message: "Hello ALice"
+        alice.save
+        post :create, invitation: { friend_name: "Alice", friend_email: alice.email, message: "Hello ALice" }
         expect(ActionMailer::Base.deliveries).to be_empty
       end
-      it "cannot send invitation if blank email" do
-        post :create, name:"Alice", friend_email: "", message: "Hello ALice"
+      it "cannot send invitation to blank email" do
+        post :create, invitation: { friend_name: "Alice", friend_email: nil, message: "Hello ALice" }
         expect(ActionMailer::Base.deliveries).to be_empty
       end
     end
