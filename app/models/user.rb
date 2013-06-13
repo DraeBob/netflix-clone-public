@@ -8,15 +8,11 @@ class User < ActiveRecord::Base
   has_many :following_relationships, class_name: "Followership", foreign_key: "follower_id"
   has_many :followed_relationships, class_name: "Followership", foreign_key: "followee_id"
  
-  has_many :sent_invitations, class_name: 'Invitation', foreign_key: 'inviter_id'
-  belongs_to :invitation
+  has_many :invitations, foreign_key: 'inviter_id'
 
   validates :fullname, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: {minimum: 6}
-
-  #validates_presence_of :invitation_id, message: 'is required'
-  attr_accessible :invitation_token
 
   def normalize_queue_item_positions 
     queue_videos.each_with_index do |queue_video, index|
@@ -43,11 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def invitation_token
-    if invitation
-      invitation.token 
-    else
-      invitation.token = nil
-    end
+    invitation.token if invitation
   end
 
   def invitation_token=(token)
