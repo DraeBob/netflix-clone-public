@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
   has_many :invitations, foreign_key: 'inviter_id'
 
   validates :fullname, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true,
+                    uniqueness: true,
+                    format: { with: /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i }
   validates :password, presence: true, length: {minimum: 6}
 
   def normalize_queue_item_positions 
