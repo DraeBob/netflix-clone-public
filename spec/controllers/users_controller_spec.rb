@@ -26,9 +26,8 @@ describe UsersController do
       expect(assigns(:user).email).to eq(invitation.friend_email)
     end
 
-    it "redirect to expired token page if token is invalid" do
-      get :new_with_invitation_token, token: 'expired_token'
-      expect(response).to redirect_to expired_token_path
+    it_behaves_like "require_valid_token" do
+      let(:action) { get :new_with_invitation_token, token: 'expired_token' }
     end
 
     it "sets @invitation_token" do
@@ -86,7 +85,7 @@ describe UsersController do
         end
       end
 
-      context "valid input" do
+      context "invalid input" do
         it "Do not save the user if inputs are invalid" do
           expect {
             post :create, user: {fullname: nil}
@@ -94,8 +93,7 @@ describe UsersController do
         end
 
         it "render new page if inputs are invalid" do
-          post :create,
-            user: {fullname: nil}
+          post :create, user: {fullname: nil}
           expect(response).to render_template :new
         end
       end
@@ -104,9 +102,8 @@ describe UsersController do
     context "email sending" do
       after { ActionMailer::Base.deliveries.clear }
 
-      it "sends out the email" do
-        post :create, user: Fabricate.attributes_for(:user)
-        expect(ActionMailer::Base.deliveries).not_to be_empty
+      it_behaves_like "send_email_with_valid_input" do
+        let(:action) { post :create, user: Fabricate.attributes_for(:user) }
       end
 
       it "sends out to the right recipient" do
@@ -119,10 +116,10 @@ describe UsersController do
         expect(ActionMailer::Base.deliveries.last.body).to include(User.last.fullname)
       end
 
-      it "not sends out the email with invalid input" do
-        post :create, user: Fabricate.attributes_for(:user, fullname: nil, password: nil, token: nil)
-        expect(ActionMailer::Base.deliveries).to be_empty
+      it_behaves_like "not_send_email_with_invalid_input" do
+        let(:action) { post :create, user: Fabricate.attributes_for(:user, fullname: nil, password: nil, token: nil) }
       end
+      
     end
   end
 end

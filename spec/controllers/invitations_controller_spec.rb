@@ -20,9 +20,8 @@ describe InvitationsController do
         expect(response).to redirect_to invite_path
       end
 
-      it "send the invitation" do
-        post :create, invitation: Fabricate.attributes_for(:invitation)
-        expect(ActionMailer::Base.deliveries).not_to be_empty
+      it_behaves_like "send_email_with_valid_input" do
+        let(:action) { post :create, invitation: Fabricate.attributes_for(:invitation) }
       end
 
       it "send invitation to to the right friend" do
@@ -39,15 +38,17 @@ describe InvitationsController do
       before { set_current_user }
       after { ActionMailer::Base.deliveries.clear }
 
-      it "cannot invite friend who is already in myflix" do
+      context "cannot invite friend who is already in myflix" do
         alice = Fabricate(:user)
         alice.save
-        post :create, invitation: { friend_email: alice.email}
-        expect(ActionMailer::Base.deliveries).to be_empty
+        it_behaves_like "not_send_email_with_invalid_input" do
+          let(:action) { post :create, invitation: { friend_email: alice.email} }
+        end
       end
-      it "cannot send invitation to blank email" do
-        post :create, invitation: { friend_email: nil }
-        expect(ActionMailer::Base.deliveries).to be_empty
+      context "cannot send invitation to blank email" do
+        it_behaves_like "not_send_email_with_invalid_input" do
+          let(:action) { post :create, invitation: { friend_email: nil } }
+        end
       end
     end
 

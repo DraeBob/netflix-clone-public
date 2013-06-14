@@ -16,9 +16,8 @@ describe PasswordResetsController do
       expect(assigns(:token)).to eq(alice.token)
     end
 
-    it "redirects to the expired token page if the token is invalid" do
-      get :show, id: 'dfsdfdsfg'
-      expect(response).to redirect_to expired_token_path
+    it_behaves_like "require_valid_token" do
+      let(:action) { get :show, id: 'expired_token' }
     end
   end
 
@@ -50,9 +49,8 @@ describe PasswordResetsController do
       end
     end
     context "with invalid token" do
-      it "redirects to the expired token path" do
-        post :create, token: '4324fsdf', password: 'pdsfsfasswodsfrd'
-        expect(response).to redirect_to expired_token_path
+      it_behaves_like "require_valid_token" do
+        let(:action) { post :create, token: '4324fsdf', password: 'pdsfsfasswodsfrd' }
       end
     end
   end
