@@ -1,0 +1,12 @@
+%section.invite.container
+  .row
+    .span10.offset1
+      = bootstrap_form_for(@invitation, html: { class: 'form-horizontal' }, help: :block) do |f|
+        %header
+          %h1 Invite a friend to join MyFlix!
+        = f.alert_message "Please fix the errors below."
+        = f.text_field :friend_name, label: "Friend's Name"
+        = f.text_field :friend_email, label: "Friend's Email Address"
+        = f.text_area :message, label: "Invitation Message", class: 'span4', rows: 6, placeholder: "Please join this really cool site!"
+        = f.actions do
+          = f.primary 'Send Invitation', disable_with: 'Saving...' 

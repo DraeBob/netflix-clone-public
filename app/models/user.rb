@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Tokenable
+
   has_secure_password
   has_many :reviews, order: "created_at desc"
   has_many :queue_videos, order: :position
@@ -6,11 +8,13 @@ class User < ActiveRecord::Base
   has_many :following_relationships, class_name: "Followership", foreign_key: "follower_id"
   has_many :followed_relationships, class_name: "Followership", foreign_key: "followee_id"
  
-  validates :fullname, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true, length: {minimum: 6}
+  has_many :invitations, class_name: "invitation", foreign_key: 'inviter_id'
 
-  before_create :generate_token
+  validates :fullname, presence: true, uniqueness: true
+  validates :email, presence: true,
+                    uniqueness: true,
+                    format: { with: /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i }
+  validates :password, presence: true, length: {minimum: 6}
 
   def normalize_queue_item_positions 
     queue_videos.each_with_index do |queue_video, index|
@@ -36,8 +40,8 @@ class User < ActiveRecord::Base
     !(self.follows?(a_followee) || self == a_followee)
   end
 
-  def generate_token
-    self.token = SecureRandom.urlsafe_base64
+  def follow(another_user)
+    following_relationships.create(followee: another_user) if can_follow?(another_user)
   end
 
 end

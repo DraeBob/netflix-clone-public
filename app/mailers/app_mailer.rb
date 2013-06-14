@@ -1,5 +1,5 @@
 class AppMailer < ActionMailer::Base
-  default from: 'yuichih87@gmail.com'
+  default from: 'myflix_admin@example.com'
 
   def notify_on_new_user(user)
     @user = user
@@ -9,5 +9,10 @@ class AppMailer < ActionMailer::Base
   def password_reset_confirmation(user)
     @user = user
     mail to: user.email, subject: "Password reset request - myflix!"
+  end
+
+  def invite_friend(invitation)
+    @invitation = invitation
+    mail to: invitation.friend_email, subject: "Invitation to join myflix!"
   end
 end

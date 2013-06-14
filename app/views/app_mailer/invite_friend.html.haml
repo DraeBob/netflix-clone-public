@@ -1,0 +1,9 @@
+!!!
+%html
+  %body
+    %p Hi, #{@invitation.friend_name}, #{@invitation.inviter.fullname} has invited you to join myflix.
+    %p You can watch as much movies as you want at $9.99/month.
+    %p join us from followig link.
+    %p Message from #{@invitation.inviter.fullname}
+    %p= @invitation.message
+    %p= link_to "Register at myflix from here", new_user_with_token_url(@invitation.token)
