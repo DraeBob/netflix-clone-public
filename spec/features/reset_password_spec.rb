@@ -33,5 +33,7 @@ feature 'Reset password' do
     click_button "Sign in"
     page.should have_content("Welcome, you are logged in")
     page.should have_content(anna.fullname)
+
+    clear_email
   end
 end

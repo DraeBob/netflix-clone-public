@@ -40,4 +40,8 @@ class User < ActiveRecord::Base
     !(self.follows?(a_followee) || self == a_followee)
   end
 
+  def follow(another_user)
+    following_relationships.create(followee: another_user) if can_follow?(another_user)
+  end
+
 end

@@ -18,7 +18,7 @@ class InvitationsController < ApplicationController
     else 
       if @invitation.save
         AppMailer.invite_friend(@invitation).deliver
-        redirect_to root_path
+        redirect_to invite_path
         flash[:success] = "Invitation message has been sent to your friend"
       else
         render :new

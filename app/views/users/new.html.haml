@@ -6,7 +6,7 @@
         %h1 Register
         = bootstrap_form_for(@user, html: { class: 'form-horizontal' }, help: :block) do |f|
           = f.alert_message "Please fix the errors below."
-          = f.hidden_field :token
+          = hidden_field_tag :invitation_token, @invitation_token
           = f.text_field :email
           = f.password_field :password, placeholder: '*Minimum 6 characters'
           = f.text_field :fullname

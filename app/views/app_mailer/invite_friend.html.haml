@@ -6,4 +6,4 @@
     %p join us from followig link.
     %p Message from #{@invitation.inviter.fullname}
     %p= @invitation.message
-    %p= link_to "Register at myflix from here", new_user_url(@invitation.token)
+    %p= link_to "Register at myflix from here", new_user_with_token_url(@invitation.token)

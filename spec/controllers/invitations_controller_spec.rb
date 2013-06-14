@@ -1,14 +1,23 @@
 require 'spec_helper'
 
 describe InvitationsController do
+  describe "GET new" do
+    it "sets @invitation to a new invitation" do
+      set_current_user
+      get :new
+      expect(assigns(:invitation)).to be_a_new_record
+      expect(assigns(:invitation)).to be_a_instance_of Invitation
+    end
+  end
+
   describe "POST create" do
     context "correct input" do
       before { set_current_user }
       after { ActionMailer::Base.deliveries.clear }
 
-      it "redirect to root path" do
+      it "redirect to invite_path" do
         post :create, invitation: Fabricate.attributes_for(:invitation)
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to invite_path
       end
 
       it "send the invitation" do
