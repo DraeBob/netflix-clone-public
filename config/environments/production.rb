@@ -65,7 +65,7 @@ Myflix::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   #
-  config.action_mailer.default_url_options = { :host => "http://myflix-yuichi.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "myflix-yuichi.herokuapp.com" }
 
   config.action_mailer.delivery_method = :smtp
 
@@ -74,7 +74,7 @@ Myflix::Application.configure do
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'http://myflix-yuichi.herokuapp.com',
+    :domain         => 'myflix-yuichi.herokuapp.com',
     :authentication => :plain,
   }
 
