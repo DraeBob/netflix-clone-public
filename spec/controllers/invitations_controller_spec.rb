@@ -33,11 +33,11 @@ describe InvitationsController do
       it "cannot invite friend who is already in myflix" do
         alice = Fabricate(:user)
         alice.save
-        post :create, invitation: { friend_name: "Alice", friend_email: alice.email, message: "Hello ALice" }
+        post :create, invitation: { friend_email: alice.email}
         expect(ActionMailer::Base.deliveries).to be_empty
       end
       it "cannot send invitation to blank email" do
-        post :create, invitation: { friend_name: "Alice", friend_email: nil, message: "Hello ALice" }
+        post :create, invitation: { friend_email: nil }
         expect(ActionMailer::Base.deliveries).to be_empty
       end
     end

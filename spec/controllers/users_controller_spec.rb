@@ -2,18 +2,24 @@ require 'spec_helper'
 
 describe UsersController do
   describe "GET new" do
-    let(:user) { Fabricate(:user)}
+    context "Without invitation" do
+      it "assigns a new user to @user" do
+        get :new
+        expect(assigns(:user)).to be_a_new(User)
+      end
 
-    it "assigns a new user to @user" do
-      get :new
-      assigns(:user).should be_a_new(User)
+      it "render new tempalte" do
+        get :new
+        expect(response).to render_template :new
+      end
     end
-
-    it "render new tempalte" do
-      get :new
-      response.should render_template :new
+    context "With invitation" do
+      it "email is auto-filled if invited" do
+        invitation = Fabricate(:invitation)
+        get :new, invitation_id: invitation.id
+        expect(assigns(:user).email).to eq(invitation.friend_email)
+      end
     end
-
   end
 
   describe "POST create" do
@@ -73,7 +79,7 @@ describe UsersController do
       end
 
       it "not sends out the email with invalid input" do
-        post :create, user: Fabricate.attributes_for(:user, password: nil)
+        post :create, user: Fabricate.attributes_for(:user, fullname: nil, password: nil, token: nil)
         expect(ActionMailer::Base.deliveries).to be_empty
       end
     end

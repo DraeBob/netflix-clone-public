@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :following_relationships, class_name: "Followership", foreign_key: "follower_id"
   has_many :followed_relationships, class_name: "Followership", foreign_key: "followee_id"
  
-  has_many :invitations, foreign_key: 'inviter_id'
+  has_many :invitations, class_name: "invitation", foreign_key: 'inviter_id'
 
   validates :fullname, presence: true, uniqueness: true
   validates :email, presence: true,
@@ -39,13 +39,5 @@ class User < ActiveRecord::Base
   def can_follow?(a_followee)
     !(self.follows?(a_followee) || self == a_followee)
   end
-
-  def invitation_token
-    invitation.token if invitation
-  end
-
-  def invitation_token=(token)
-    self.invitation = Invitation.find_by_token(token)
-  end 
 
 end
