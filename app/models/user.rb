@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :fullname, presence: true, uniqueness: true
   validates :email, presence: true,
                     uniqueness: true,
-                    format: { with: /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i }
+                    format: { with: /@/ }
   validates :password, presence: true, length: {minimum: 6}
 
   def normalize_queue_item_positions 
