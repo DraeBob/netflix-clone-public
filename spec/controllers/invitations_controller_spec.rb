@@ -47,7 +47,7 @@ describe InvitationsController do
       end
       context "cannot send invitation to blank email" do
         it_behaves_like "not_send_email_with_invalid_input" do
-          let(:action) { post :create, invitation: { friend_email: nil } }
+          let(:action) { post :create, invitation: { friend_email: "" } }
         end
       end
     end
