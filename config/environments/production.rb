@@ -77,13 +77,4 @@ Myflix::Application.configure do
     :domain         => 'myflix-yuichi.herokuapp.com',
     :authentication => :plain,
   }
-
-  # config.action_mailer.smtp_settings = {
-  #   :address              => "smtp.gmail.com",
-  #   :port                 => 587,
-  #   #:domain               => 'http://myflix-yuichi.herokuapp.com',
-  #   :user_name            => ENV["GMAIL_USERNAME"],
-  #   :password             => ENV["GMAIL_PASSWORD"],
-  #   :authentication       => 'plain',
-  #   :enable_starttls_auto => true  }
 end
