@@ -7,6 +7,7 @@ gem 'bcrypt-ruby'
 gem 'bootstrap_form'
 gem 'resque'
 gem 'sidekiq'
+gem 'unicorn'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
