@@ -12,11 +12,11 @@ class NotifyOnNewUser
   private
 
   def api_key
-     @api_key ||= ENV['mailgun_api_key']
+    @api_key ||= ENV['MAILGUN_API_KEY']
   end
 
   def mailgun_api_domain
-    @mailgun_api_domain ||= ENV['mailgun_api_domain']
+    @mailgun_api_domain ||= ENV['MAILGUN_API_DOMAIN']
   end
 
   def messaging_api_end_point
