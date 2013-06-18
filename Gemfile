@@ -8,6 +8,7 @@ gem 'bootstrap_form'
 gem 'resque'
 gem 'sidekiq'
 gem 'unicorn'
+gem "rest-client"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
