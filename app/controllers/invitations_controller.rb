@@ -17,7 +17,7 @@ class InvitationsController < ApplicationController
       render :new
     else 
       if @invitation.save
-        AppMailer.invite_friend(@invitation).deliver
+        AppMailer.delay.invite_friend(@invitation)
         redirect_to invite_path
         flash[:success] = "Invitation message has been sent to your friend"
       else

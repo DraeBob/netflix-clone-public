@@ -65,25 +65,15 @@ Myflix::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   #
-  config.action_mailer.default_url_options = { :host => "http://myflix-yuichi.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "myflix-yuichi.herokuapp.com" }
 
   config.action_mailer.delivery_method = :smtp
-
   config.action_mailer.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'], 
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'http://myflix-yuichi.herokuapp.com',
+    :domain         => 'myflix-yuichi.herokuapp.com',
     :authentication => :plain,
   }
-
-  # config.action_mailer.smtp_settings = {
-  #   :address              => "smtp.gmail.com",
-  #   :port                 => 587,
-  #   #:domain               => 'http://myflix-yuichi.herokuapp.com',
-  #   :user_name            => ENV["GMAIL_USERNAME"],
-  #   :password             => ENV["GMAIL_PASSWORD"],
-  #   :authentication       => 'plain',
-  #   :enable_starttls_auto => true  }
 end

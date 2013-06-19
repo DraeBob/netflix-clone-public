@@ -14,3 +14,5 @@
 /log/*.log
 /tmp
 /config/local_env.yml
+# Ignore application configuration
+/config/application.yml

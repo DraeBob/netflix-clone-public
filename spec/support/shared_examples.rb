@@ -6,6 +6,12 @@ shared_examples "require_login" do
   end
 end
 
+shared_examples "tokenable" do
+  it "generates a random token when the user is created" do
+    expect(object.token).to be_present
+  end
+end
+
 shared_examples "require_valid_token" do
   it "redirect to the expired token path" do
     action
