@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     if @user.save
       handle_invitation
       session[:user_id] = @user.id
-      NotifyOnNewUser.new.notify_on_new_user(@user)
+      AppMailer.notify_on_new_user(@user).deliver
       flash[:notice] = "Successfully registered"
       redirect_to videos_path
     else
