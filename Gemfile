@@ -9,6 +9,7 @@ gem 'resque'
 gem 'sidekiq'
 gem 'unicorn'
 gem "rest-client"
+gem 'figaro'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
