@@ -2,6 +2,10 @@ Myflix::Application.routes.draw do
   get 'ui(/:action)', controller: 'ui'
 
   root to: 'sessions#index'
+
+  namespace :admin do
+    resources :videos, only: [:new, :create]
+  end
   
   resources :videos, only: [:index, :show] do
     collection do
