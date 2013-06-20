@@ -49,6 +49,9 @@ GEM
     capybara-email (2.1.0)
       capybara (~> 2.1.0)
       mail
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     celluloid (0.14.1)
       timers (>= 1.0.0)
     coderay (1.0.8)
@@ -211,6 +214,7 @@ DEPENDENCIES
   bootstrap_form
   capybara
   capybara-email
+  carrierwave
   coffee-rails (~> 3.2.1)
   database_cleaner
   fabrication

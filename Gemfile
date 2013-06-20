@@ -10,6 +10,7 @@ gem 'sidekiq'
 gem 'unicorn'
 gem "rest-client"
 gem 'figaro'
+gem 'carrierwave'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
