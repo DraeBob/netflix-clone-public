@@ -3,4 +3,5 @@ Fabricator (:user) do
   email { Faker::Internet.email }
   password { Faker::Lorem.characters}
   token { Faker::Lorem.characters }
+  admin {}
 end
