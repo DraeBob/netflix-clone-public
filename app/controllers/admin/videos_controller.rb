@@ -4,5 +4,6 @@ class Admin::VideosController < ApplicationController
   end
 
   def create
+    redirect_to videos_path
   end
 end

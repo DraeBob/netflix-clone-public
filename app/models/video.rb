@@ -1,4 +1,6 @@
 class Video < ActiveRecord::Base
+  mount_uploader :video, VideosUploader 
+
   has_many :reviews, order: "created_at desc"
   has_many :video_categories
   has_many :categories, through: :video_categories
