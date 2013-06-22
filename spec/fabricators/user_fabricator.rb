@@ -1,7 +1,11 @@
-Fabricator (:user) do
+Fabricator(:user) do
   fullname { Faker::Name.name}
   email { Faker::Internet.email }
   password { Faker::Lorem.characters}
   token { Faker::Lorem.characters }
-  admin {}
+  admin false 
+end
+
+Fabricator(:admin, from: :user) do
+  admin true 
 end

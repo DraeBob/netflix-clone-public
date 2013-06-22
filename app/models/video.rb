@@ -1,5 +1,6 @@
 class Video < ActiveRecord::Base
-  mount_uploader :video, VideosUploader 
+  mount_uploader :large_cover, LargeCoverUploader
+  mount_uploader :small_cover, SmallCoverUploader
 
   has_many :reviews, order: "created_at desc"
   has_many :video_categories

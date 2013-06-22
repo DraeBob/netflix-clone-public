@@ -19,8 +19,7 @@ def sign_in(a_user=nil)
   click_button "Sign in"
 end
 
-def set_admin
-  user = Fabricate(:user, admin:true)
-  session[:user_id] = user.id
+def set_admin(admin=nil)
+  session[:user_id] = (admin || Fabricate(:admin)).id
 end
 

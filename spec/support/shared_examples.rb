@@ -32,3 +32,11 @@ shared_examples "send_email_with_valid_input" do
     expect(ActionMailer::Base.deliveries).not_to be_empty
   end
 end
+
+shared_examples "require_admin" do
+  it "redirect to root path" do
+    set_current_user
+    get :new
+    expect(response).to redirect_to root_path
+  end
+end
