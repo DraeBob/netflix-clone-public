@@ -1,0 +1,7 @@
+%section.register.container
+  .row
+    .span10.offset1
+      %header
+        %h2 Thank you for your suppport
+        =form_tag payments_path do
+          %script(src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="pk_test_zjKlio1QvZ6e8Fu5fHrDwD8q" data-amount="2000" data-name="Support myflix" data-description="Thank you for your donation")

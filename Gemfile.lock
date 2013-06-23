@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 2dbc700fc35c9f6191e274febcd283223fce7d9a
+  specs:
+    stripe (1.8.3)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -256,5 +264,6 @@ DEPENDENCIES
   shoulda-matchers
   sidekiq
   sqlite3
+  stripe!
   uglifier (>= 1.0.3)
   unicorn
