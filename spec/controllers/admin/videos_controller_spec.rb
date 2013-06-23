@@ -42,7 +42,7 @@ describe Admin::VideosController do
         expect(category1.videos.count).to eq(1)
       end
 
-      it "redirect to videos_path after adding a video" do
+      it "flash success message" do
         set_admin
         category1 = Fabricate(:category)
         category2 = Fabricate(:category)
@@ -55,7 +55,7 @@ describe Admin::VideosController do
         category1 = Fabricate(:category)
         category2 = Fabricate(:category)
         post :create, video: { title: 'Family Guy', description: 'Good', category_ids: [category1.id, category2.id]}
-        expect(response).to redirect_to videos_path
+        expect(response).to redirect_to new_admin_video_path
       end
     end
 

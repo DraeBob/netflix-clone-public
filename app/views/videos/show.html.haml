@@ -2,14 +2,15 @@
   .container
     .row
       .video_large_cover.span7.offset1
-        %img{:src => @video.large_cover_url}/
+        %img{:src => @video.large_cover}/
       .video_info.span3
         %header
           %h3= @video.title
           %span Average Rating: #{@video.average_ratings}/5.0
-        %p.pull-left= @video.description
+        %fieldset
+          %p.pull-left= @video.description
         .actions
-          %a.btn.btn-primary{:href => "#"} Watch Now
+          =link_to "Watch Now", @video.video_url, class: 'btn btn-primary'
           =link_to "+ My Queue", queue_videos_path(video_id: @video.id), method: :post, class: "btn" unless current_user.queued_already?(@video)
 
 %section.reviews.container

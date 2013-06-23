@@ -7,7 +7,7 @@ class Admin::VideosController < AdminsController
     @video = Video.create(params[:video])
     if @video.save
       flash[:success] = "Successfully added #{@video.title}"
-      redirect_to videos_path
+      redirect_to new_admin_video_path
     else
       flash[:error] = "cannot add the video, check the input, try again"
       render :new
