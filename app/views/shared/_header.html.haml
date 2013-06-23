@@ -6,7 +6,11 @@
       %li= link_to "Videos", videos_path
       %li= link_to "My Queue", my_queue_path
       %li= link_to "People", followerships_path
-      %li= link_to "Invite", invite_path
+      - if current_user.admin
+        %li= link_to "Add Video", new_admin_video_path
+      - else
+        %li= link_to "Invite", invite_path
+     
     = form_tag search_videos_path, class: 'span5 for-search', method: 'post' do
       = text_field_tag :search_term, params[:search_term], class: "search-query", placeholder: "Search for videos here"
       = submit_tag "Search", name: nil, class: 'btn'

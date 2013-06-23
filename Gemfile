@@ -10,6 +10,9 @@ gem 'sidekiq'
 gem 'unicorn'
 gem "rest-client"
 gem 'figaro'
+gem 'carrierwave'
+gem "fog", "~> 1.3.1"
+gem "mini_magick"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
