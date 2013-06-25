@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   private
 
   def handle_payment(user)
-    Stripe.api_key = ENV['STRIPE_API']
+    Stripe.api_key = ENV['Stripe_api']
     token = params[:stripeToken]
     begin
       customer = Stripe::Customer.create(

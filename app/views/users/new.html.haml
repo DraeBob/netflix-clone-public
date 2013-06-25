@@ -1,7 +1,7 @@
 = content_for :head do
   %script(src="https://js.stripe.com/v2/")
   :javascript
-    Stripe.setPublishableKey(ENV['STRIPE_PUBLIC']);
+    Stripe.setPublishableKey(ENV['Stripe_publish']);
   = javascript_include_tag "payment"
 
 %section.register.container
@@ -9,26 +9,27 @@
     .span10.offset1
       %header
         %h1 Register
-        = bootstrap_form_for(@user, html: { class: 'form-horizontal', id: 'payment-from'}, help: :block) do |f|
+        = bootstrap_form_for(@user, html: { class: 'form-horizontal', id: 'payment-form'}, help: :block) do |f|
           %fieldset
             = f.alert_message "Please fix the errors below."
             = hidden_field_tag :invitation_token, @invitation_token
             = f.text_field :email
             = f.password_field :password, placeholder: '*Minimum 6 characters'
             = f.text_field :fullname
+          %span.payment-errors
           %fieldset.credit_card
             .control-group
               %label.control-label Credit Card Number
               .controls
-                %input.span3(type="text")
+                %input.span3.card-number(type="text")
             .control-group
               %label.control-label Security Code
               .controls
-                %input.span3(type="text")
+                %input.span3.card-cvc(type="text")
             .control-group
               %label.control-label Expiration
               .controls
                 = select_month(Date.today, {add_month_numbers: true}, name:nil, class: 'span2 card-expiry-month')
                 = select_year(Date.today.year, {start_year: Date.today.year, end_year: Date.today.year + 4}, name: nil, class: 'span1 card-expiry-year')
           = f.actions do
-            = f.primary 'Register', disable_with: 'Saving...'
+            = f.primary 'Register', class: 'payment_submit', disable_with: 'Saving...'

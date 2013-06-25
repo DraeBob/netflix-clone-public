@@ -1,5 +1,5 @@
 jQuery(function($) {
-  $('#payment-from').submit(function(event){
+  $('#payment-form').submit(function(event){
     var $form = $(this);
     $form.find('.payment_submit').prop('disabled', true);
     Stripe.card.createToken({
