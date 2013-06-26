@@ -24,17 +24,34 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      handle_payment(@user)
       handle_invitation
-      session[:user_id] = @user.id
       AppMailer.notify_on_new_user(@user).deliver
       flash[:notice] = "Successfully registered"
-      redirect_to videos_path
+      redirect_to login_path
     else
       render :new
     end
   end
 
   private
+
+  def handle_payment(user)
+    Stripe.api_key = ENV['Stripe_api']
+    token = params[:stripeToken]
+    begin
+      Stripe::Charge.create(
+        :amount => 999,
+        :currency => "cad",
+        :card => token,
+        :description => 'Myflix monthly service fee'
+      )
+    rescue Stripe::CardError => e
+      user.destroy
+      flash[:error] = e.message
+      redirect_to new_user_path
+    end
+  end
 
   def handle_invitation
     if params[:invitation_token].present?
