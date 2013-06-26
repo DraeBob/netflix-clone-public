@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       handle_invitation
       AppMailer.notify_on_new_user(@user).deliver
       flash[:notice] = "Successfully registered"
-      return login_path
+      redirect_to login_path
     else
       render :new
     end
@@ -40,14 +40,9 @@ class UsersController < ApplicationController
     Stripe.api_key = ENV['Stripe_api']
     token = params[:stripeToken]
     begin
-      customer = Stripe::Customer.create(
-        :card => token,
-        :description => user.email
-      )
-      charge = Stripe::Charge.create(
+      Stripe::Charge.create(
         :amount => 999,
         :currency => "cad",
-        :customer => customer.id,
         :card => token,
         :description => 'Myflix monthly service fee'
       )
