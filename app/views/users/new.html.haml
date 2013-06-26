@@ -1,7 +1,7 @@
 = content_for :head do
   %script(src="https://js.stripe.com/v2/")
   :javascript
-    Stripe.setPublishableKey('pk_test_zjKlio1QvZ6e8Fu5fHrDwD8q');
+    Stripe.setPublishableKey("#{Rails.configuration.stripe[:publishable_key]}");
   = javascript_include_tag "payment"
 
 %section.register.container
