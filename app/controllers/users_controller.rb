@@ -37,18 +37,19 @@ class UsersController < ApplicationController
   private
 
   def handle_payment(user)
-    Stripe.api_key = ENV['Stripe_api']
     token = params[:stripeToken]
-    begin
-      Stripe::Charge.create(
-        :amount => 999,
-        :currency => "cad",
-        :card => token,
-        :description => 'Myflix monthly service fee'
-      )
-    rescue Stripe::CardError => e
+
+    charge = StripeWrapper::Chrage.create(
+      :amount => 999,
+      :currency => "cad",
+      :card => token,
+      :description => 'Myflix monthly service fee'
+    )
+    if charge.successful?
+      flash[:success] = 'Thank you for your sign up !'
+    else 
       user.destroy
-      flash[:error] = e.message
+      flash[:error] = charge.error_message
       redirect_to new_user_path
     end
   end
