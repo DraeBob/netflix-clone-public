@@ -39,6 +39,8 @@ gem 'jquery-rails'
 group :test do
   gem 'capybara'
   gem 'capybara-email'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development, :test do
