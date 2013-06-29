@@ -105,7 +105,7 @@ describe UsersController do
         charge.stub(:successful?).and_return(true)
         StripeWrapper::Charge.stub(:create).and_return(charge)
 
-        post :create, token: '123'
+        post :create, user: Fabricate.attributes_for(:user), token: '123'
       end
 
       it 'sets the flash success message' do
@@ -124,7 +124,7 @@ describe UsersController do
         charge.stub(:error_message).and_return('Your card was declined.')
         StripeWrapper::Charge.stub(:create).and_return(charge)
 
-        post :create, token: '123'
+        post :create, user: Fabricate.attributes_for(:user), token: '123'
       end
 
       it 'sets the flash error message' do
