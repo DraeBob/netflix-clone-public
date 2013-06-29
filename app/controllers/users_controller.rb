@@ -34,12 +34,10 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
   def handle_payment(user)
     token = params[:stripeToken]
 
-    charge = StripeWrapper::Chrage.create(
+    charge = StripeWrapper::Charge.create(
       :amount => 999,
       :currency => "cad",
       :card => token,
