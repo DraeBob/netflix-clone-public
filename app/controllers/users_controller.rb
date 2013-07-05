@@ -27,11 +27,11 @@ class UsersController < ApplicationController
       handle_payment(@user)
       if @charge.successful?
         @user.save
-        flash[:success] = 'Thank you for your sign up !'
+        session[:user_id] = @user.id
         handle_invitation
         AppMailer.notify_on_new_user(@user).deliver
-        flash[:notice] = "Successfully registered"
-        redirect_to login_path
+        flash[:success] = "Successfully registered"
+        redirect_to videos_path
       else 
         flash[:error] = @charge.error_message
         render :new
@@ -46,7 +46,6 @@ class UsersController < ApplicationController
     token = params[:stripeToken]
     @charge = StripeWrapper::Charge.create(
       :amount => 999,
-      :currency => "cad",
       :card => token,
       :description => 'Myflix monthly service fee'
     )

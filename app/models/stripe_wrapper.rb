@@ -12,7 +12,7 @@ module StripeWrapper
       begin
         response = Stripe::Charge.create(
           amount: options[:amount],
-          currency: "cad",
+          currency: "usd",
           card: options[:card],
           description: 'Myflix monthly service fee'
          ) 
@@ -21,7 +21,7 @@ module StripeWrapper
         new(e, :error)
       end
     end
-    
+
     def successful?
       status == :success
     end
