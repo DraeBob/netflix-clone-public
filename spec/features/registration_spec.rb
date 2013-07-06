@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Registration' do
-  scenario "successful registration", js: true do
+  scenario "successful registration", {js: true, vcr: true } do
     visit new_user_path
 
     fill_in 'Email', with: 'dyankee@example.com'
