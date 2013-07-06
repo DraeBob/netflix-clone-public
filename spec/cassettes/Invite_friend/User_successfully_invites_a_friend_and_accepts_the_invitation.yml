@@ -1,0 +1,5441 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/url
+    body:
+      encoding: US-ASCII
+      string: ! '{"url":"http://127.0.0.1:52814/login"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '38'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '87'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"get","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Email'' or ./@name
+        = ''Email'') or ./@placeholder = ''Email'') or ./@id = //label[normalize-space(string(.))
+        = ''Email'']/@for)] | .//label[normalize-space(string(.)) = ''Email'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '547'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{448ef6f2-c179-0540-9fe0-911652456452}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B448ef6f2-c179-0540-9fe0-911652456452%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B448ef6f2-c179-0540-9fe0-911652456452%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B448ef6f2-c179-0540-9fe0-911652456452%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B448ef6f2-c179-0540-9fe0-911652456452%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '107'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"text"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B448ef6f2-c179-0540-9fe0-911652456452%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{448ef6f2-c179-0540-9fe0-911652456452}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B448ef6f2-c179-0540-9fe0-911652456452%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["ernestine_corwin@stamm.com"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '40'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Password'' or
+        ./@name = ''Password'') or ./@placeholder = ''Password'') or ./@id = //label[normalize-space(string(.))
+        = ''Password'']/@for)] | .//label[normalize-space(string(.)) = ''Password'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '562'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{04fbf7e6-ddcf-3e41-ac69-bfa6156f4c7b}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B04fbf7e6-ddcf-3e41-ac69-bfa6156f4c7b%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B04fbf7e6-ddcf-3e41-ac69-bfa6156f4c7b%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B04fbf7e6-ddcf-3e41-ac69-bfa6156f4c7b%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B04fbf7e6-ddcf-3e41-ac69-bfa6156f4c7b%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '111'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"password"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B04fbf7e6-ddcf-3e41-ac69-bfa6156f4c7b%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{04fbf7e6-ddcf-3e41-ac69-bfa6156f4c7b}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B04fbf7e6-ddcf-3e41-ac69-bfa6156f4c7b%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["v3lf9i9rroe68il7bzx710dku6zxe9z3ckwww0qfet7uusyjbeyr4627qtmhcn4aebkdx494acprjpoj0xfd4cd8k6cxk5ollpjxcdcp9v3yd54rkvwb1uwrz9lrcqn6um5c35ok2vnckxp4gh9wzs6muhe0d54ijw5hfcegcxjyuvprn2ffjpvguk3b6flxai4hqrr36pf8q9nmhj4zt0g9q3ejj7thehu59bvahk3d5sfuuvh12tszx4ffsve"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '269'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//input[./@type = ''submit'' or ./@type
+        = ''reset'' or ./@type = ''image'' or ./@type = ''button''][((./@id = ''Sign
+        in'' or ./@value = ''Sign in'') or ./@title = ''Sign in'')] | .//input[./@type
+        = ''image''][./@alt = ''Sign in''] | .//button[(((./@id = ''Sign in'' or ./@value
+        = ''Sign in'') or normalize-space(string(.)) = ''Sign in'') or ./@title =
+        ''Sign in'')] | .//input[./@type = ''image''][./@alt = ''Sign in'']"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '418'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{49c44117-9c88-6a4d-aa04-cd0479af5c71}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B49c44117-9c88-6a4d-aa04-cd0479af5c71%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B49c44117-9c88-6a4d-aa04-cd0479af5c71%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:20 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:20 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B49c44117-9c88-6a4d-aa04-cd0479af5c71%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:21 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:21 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/url
+    body:
+      encoding: US-ASCII
+      string: ! '{"url":"http://127.0.0.1:52814/invite"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '39'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '87'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:21 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"get","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:21 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = concat(''Friend'',\"''\",''s
+        Name'') or ./@name = concat(''Friend'',\"''\",''s Name'')) or ./@placeholder
+        = concat(''Friend'',\"''\",''s Name'')) or ./@id = //label[normalize-space(string(.))
+        = concat(''Friend'',\"''\",''s Name'')]/@for)] | .//label[normalize-space(string(.))
+        = concat(''Friend'',\"''\",''s Name'')]//.//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '667'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:21 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{596bd89e-5da6-8b41-a57e-8817a5f0888f}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:21 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B596bd89e-5da6-8b41-a57e-8817a5f0888f%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:21 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:21 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B596bd89e-5da6-8b41-a57e-8817a5f0888f%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:21 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:21 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B596bd89e-5da6-8b41-a57e-8817a5f0888f%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:21 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:21 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B596bd89e-5da6-8b41-a57e-8817a5f0888f%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '107'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:21 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"text"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:21 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B596bd89e-5da6-8b41-a57e-8817a5f0888f%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:21 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:21 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{596bd89e-5da6-8b41-a57e-8817a5f0888f}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:21 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:21 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B596bd89e-5da6-8b41-a57e-8817a5f0888f%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["Snoop Dogg"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '24'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = concat(''Friend'',\"''\",''s
+        Email Address'') or ./@name = concat(''Friend'',\"''\",''s Email Address''))
+        or ./@placeholder = concat(''Friend'',\"''\",''s Email Address'')) or ./@id
+        = //label[normalize-space(string(.)) = concat(''Friend'',\"''\",''s Email
+        Address'')]/@for)] | .//label[normalize-space(string(.)) = concat(''Friend'',\"''\",''s
+        Email Address'')]//.//*[self::input | self::textarea][not(./@type = ''submit''
+        or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox'' or
+        ./@type = ''hidden'' or ./@type = ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '712'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{2e384428-f6c5-9743-8d2c-eb1cebe3d138}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B2e384428-f6c5-9743-8d2c-eb1cebe3d138%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B2e384428-f6c5-9743-8d2c-eb1cebe3d138%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B2e384428-f6c5-9743-8d2c-eb1cebe3d138%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B2e384428-f6c5-9743-8d2c-eb1cebe3d138%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '107'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"text"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B2e384428-f6c5-9743-8d2c-eb1cebe3d138%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{2e384428-f6c5-9743-8d2c-eb1cebe3d138}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B2e384428-f6c5-9743-8d2c-eb1cebe3d138%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["snoop@example.com"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '31'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Invitation Message''
+        or ./@name = ''Invitation Message'') or ./@placeholder = ''Invitation Message'')
+        or ./@id = //label[normalize-space(string(.)) = ''Invitation Message'']/@for)]
+        | .//label[normalize-space(string(.)) = ''Invitation Message'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '612'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{57fb723f-5565-d344-bc09-7ed41b547cae}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B57fb723f-5565-d344-bc09-7ed41b547cae%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B57fb723f-5565-d344-bc09-7ed41b547cae%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B57fb723f-5565-d344-bc09-7ed41b547cae%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '109'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"textarea"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B57fb723f-5565-d344-bc09-7ed41b547cae%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '111'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"textarea"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B57fb723f-5565-d344-bc09-7ed41b547cae%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{57fb723f-5565-d344-bc09-7ed41b547cae}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B57fb723f-5565-d344-bc09-7ed41b547cae%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["What up"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '21'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//input[./@type = ''submit'' or ./@type
+        = ''reset'' or ./@type = ''image'' or ./@type = ''button''][((./@id = ''Send
+        Invitation'' or ./@value = ''Send Invitation'') or ./@title = ''Send Invitation'')]
+        | .//input[./@type = ''image''][./@alt = ''Send Invitation''] | .//button[(((./@id
+        = ''Send Invitation'' or ./@value = ''Send Invitation'') or normalize-space(string(.))
+        = ''Send Invitation'') or ./@title = ''Send Invitation'')] | .//input[./@type
+        = ''image''][./@alt = ''Send Invitation'']"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '490'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{43d807bf-41c7-d640-9b0e-d9c03cc3ddd3}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B43d807bf-41c7-d640-9b0e-d9c03cc3ddd3%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B43d807bf-41c7-d640-9b0e-d9c03cc3ddd3%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:22 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:22 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B43d807bf-41c7-d640-9b0e-d9c03cc3ddd3%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:23 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:23 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//a[./@href][(((./@id = ''Welcome, Camylle
+        Kovacek I'' or normalize-space(string(.)) = ''Welcome, Camylle Kovacek I'')
+        or ./@title = ''Welcome, Camylle Kovacek I'') or .//img[./@alt = ''Welcome,
+        Camylle Kovacek I''])]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '238'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:23 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{a1526b7d-9d34-9745-b55c-77d9d1ffcff0}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:23 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Ba1526b7d-9d34-9745-b55c-77d9d1ffcff0%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:23 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:23 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Ba1526b7d-9d34-9745-b55c-77d9d1ffcff0%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:23 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:23 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//a[./@href][(((./@id = ''Sign Out'' or
+        normalize-space(string(.)) = ''Sign Out'') or ./@title = ''Sign Out'') or
+        .//img[./@alt = ''Sign Out''])]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '166'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:23 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{cf3cd53a-6797-8e4d-bcc4-32d4054f6353}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:23 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bcf3cd53a-6797-8e4d-bcc4-32d4054f6353%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:23 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:23 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bcf3cd53a-6797-8e4d-bcc4-32d4054f6353%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/url
+    body:
+      encoding: US-ASCII
+      string: ! '{"url":"http://127.0.0.1:52814/new_user/eej5QahnrKQWRdDZB3V82A"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '64'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '87'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"get","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":"/html"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '33'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{ed7a6948-8516-0943-b379-96eb32dce7ee}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bed7a6948-8516-0943-b379-96eb32dce7ee%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bed7a6948-8516-0943-b379-96eb32dce7ee%7D/text
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '383'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJuYW1lIjoiZ2V0RWxlbWVudFRleHQiLCJzZXNzaW9uSWQiOiJkM2YwYTU3
+        ZC1jZDY1LTlhNGYtYTI3MC0yMDY3ZWUyNTg1ZTYiLCJzdGF0dXMiOjAsInZh
+        bHVlIjoiTXlGTGlYXG5SZWdpc3RlclxuRW1haWxcblBhc3N3b3JkXG5GdWxs
+        bmFtZVxuQ3JlZGl0IENhcmQgTnVtYmVyXG5TZWN1cml0eSBDb2RlXG5FeHBp
+        cmF0aW9uXG4xIC0gSmFudWFyeVxuMiAtIEZlYnJ1YXJ5XG4zIC0gTWFyY2hc
+        bjQgLSBBcHJpbFxuNSAtIE1heVxuNiAtIEp1bmVcbjcgLSBKdWx5XG44IC0g
+        QXVndXN0XG45IC0gU2VwdGVtYmVyXG4xMCAtIE9jdG9iZXJcbjExIC0gTm92
+        ZW1iZXJcbjEyIC0gRGVjZW1iZXJcbjIwMTNcbjIwMTRcbjIwMTVcbjIwMTZc
+        bjIwMTdcbsKpIDIwMTMgTXlGTGlYIn0=
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Password'' or
+        ./@name = ''Password'') or ./@placeholder = ''Password'') or ./@id = //label[normalize-space(string(.))
+        = ''Password'']/@for)] | .//label[normalize-space(string(.)) = ''Password'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '562'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{0a601443-ef94-6945-a3a5-21dfb85e64d0}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0a601443-ef94-6945-a3a5-21dfb85e64d0%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0a601443-ef94-6945-a3a5-21dfb85e64d0%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0a601443-ef94-6945-a3a5-21dfb85e64d0%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0a601443-ef94-6945-a3a5-21dfb85e64d0%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '111'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"password"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0a601443-ef94-6945-a3a5-21dfb85e64d0%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{0a601443-ef94-6945-a3a5-21dfb85e64d0}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0a601443-ef94-6945-a3a5-21dfb85e64d0%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["password"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '22'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Fullname'' or
+        ./@name = ''Fullname'') or ./@placeholder = ''Fullname'') or ./@id = //label[normalize-space(string(.))
+        = ''Fullname'']/@for)] | .//label[normalize-space(string(.)) = ''Fullname'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '562'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{f8775075-9d8a-f643-aa30-f899043c4478}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bf8775075-9d8a-f643-aa30-f899043c4478%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bf8775075-9d8a-f643-aa30-f899043c4478%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bf8775075-9d8a-f643-aa30-f899043c4478%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bf8775075-9d8a-f643-aa30-f899043c4478%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '107'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"text"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bf8775075-9d8a-f643-aa30-f899043c4478%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{f8775075-9d8a-f643-aa30-f899043c4478}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:24 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:24 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bf8775075-9d8a-f643-aa30-f899043c4478%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["Snoop Dogg"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '24'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Credit Card Number''
+        or ./@name = ''Credit Card Number'') or ./@placeholder = ''Credit Card Number'')
+        or ./@id = //label[normalize-space(string(.)) = ''Credit Card Number'']/@for)]
+        | .//label[normalize-space(string(.)) = ''Credit Card Number'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '612'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{9a45c9a1-b28b-6743-a150-5aa84d3c56a3}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B9a45c9a1-b28b-6743-a150-5aa84d3c56a3%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B9a45c9a1-b28b-6743-a150-5aa84d3c56a3%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B9a45c9a1-b28b-6743-a150-5aa84d3c56a3%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B9a45c9a1-b28b-6743-a150-5aa84d3c56a3%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '107'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"text"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B9a45c9a1-b28b-6743-a150-5aa84d3c56a3%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{9a45c9a1-b28b-6743-a150-5aa84d3c56a3}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B9a45c9a1-b28b-6743-a150-5aa84d3c56a3%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["4242424242424242"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '30'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Security Code''
+        or ./@name = ''Security Code'') or ./@placeholder = ''Security Code'') or
+        ./@id = //label[normalize-space(string(.)) = ''Security Code'']/@for)] | .//label[normalize-space(string(.))
+        = ''Security Code'']//.//*[self::input | self::textarea][not(./@type = ''submit''
+        or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox'' or
+        ./@type = ''hidden'' or ./@type = ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '587'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{64689cb6-8b22-4a44-b652-27d5029b0d5d}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B64689cb6-8b22-4a44-b652-27d5029b0d5d%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B64689cb6-8b22-4a44-b652-27d5029b0d5d%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B64689cb6-8b22-4a44-b652-27d5029b0d5d%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B64689cb6-8b22-4a44-b652-27d5029b0d5d%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '107'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"text"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B64689cb6-8b22-4a44-b652-27d5029b0d5d%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{64689cb6-8b22-4a44-b652-27d5029b0d5d}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B64689cb6-8b22-4a44-b652-27d5029b0d5d%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["123"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '17'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//select[(((./@id = ''date_month'' or
+        ./@name = ''date_month'') or ./@placeholder = ''date_month'') or ./@id = //label[normalize-space(string(.))
+        = ''date_month'']/@for)] | .//label[normalize-space(string(.)) = ''date_month'']//.//select"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '256'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{78c09bdc-dad5-af4e-88e3-164d319e321d}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B78c09bdc-dad5-af4e-88e3-164d319e321d%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B78c09bdc-dad5-af4e-88e3-164d319e321d%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B78c09bdc-dad5-af4e-88e3-164d319e321d%7D/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//option[normalize-space(string(.)) =
+        ''3 - March'']"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '79'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '153'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findChildElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{0755b441-28a4-804a-991e-e0dc2d8f3d8d}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0755b441-28a4-804a-991e-e0dc2d8f3d8d%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0755b441-28a4-804a-991e-e0dc2d8f3d8d%7D/selected
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementSelected","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":false}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0755b441-28a4-804a-991e-e0dc2d8f3d8d%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//select[(((./@id = ''date_year'' or ./@name
+        = ''date_year'') or ./@placeholder = ''date_year'') or ./@id = //label[normalize-space(string(.))
+        = ''date_year'']/@for)] | .//label[normalize-space(string(.)) = ''date_year'']//.//select"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '251'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{0ff0d4ac-d502-904f-bc0d-012bba3941d2}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0ff0d4ac-d502-904f-bc0d-012bba3941d2%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0ff0d4ac-d502-904f-bc0d-012bba3941d2%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B0ff0d4ac-d502-904f-bc0d-012bba3941d2%7D/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//option[normalize-space(string(.)) =
+        ''2015'']"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '74'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '153'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findChildElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{40407f11-6101-104f-99d0-810ae8a1eded}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B40407f11-6101-104f-99d0-810ae8a1eded%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B40407f11-6101-104f-99d0-810ae8a1eded%7D/selected
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementSelected","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":false}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B40407f11-6101-104f-99d0-810ae8a1eded%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//input[./@type = ''submit'' or ./@type
+        = ''reset'' or ./@type = ''image'' or ./@type = ''button''][((./@id = ''Register''
+        or ./@value = ''Register'') or ./@title = ''Register'')] | .//input[./@type
+        = ''image''][./@alt = ''Register''] | .//button[(((./@id = ''Register'' or
+        ./@value = ''Register'') or normalize-space(string(.)) = ''Register'') or
+        ./@title = ''Register'')] | .//input[./@type = ''image''][./@alt = ''Register'']"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '427'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:25 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{6e0cd525-239f-d043-8abd-ec37ad83511c}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:25 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B6e0cd525-239f-d043-8abd-ec37ad83511c%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:26 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:26 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B6e0cd525-239f-d043-8abd-ec37ad83511c%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:26 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:26 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B6e0cd525-239f-d043-8abd-ec37ad83511c%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:26 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:26 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/charges
+    body:
+      encoding: US-ASCII
+      string: amount=999&currency=cad&card=tok_29LUjqsn3XqQUS&description=Myflix%20monthly%20service%20fee
+    headers:
+      Accept:
+      - ! '*/*; q=0.5, application/xml'
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.8.3
+      Authorization:
+      - Bearer sk_test_OJz03Gsmewauak1Y2dSEuUtJ
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - ! '{"bindings_version":"1.8.3","lang":"ruby","lang_version":"1.9.3 p194 (2012-04-20)","platform":"x86_64-darwin12.3.0","publisher":"stripe","uname":"Darwin
+        Hagios-MacBook-Pro.local 12.4.0 Darwin Kernel Version 12.4.0: Wed May  1 17:57:12
+        PDT 2013; root:xnu-2050.24.15~1/RELEASE_X86_64 x86_64"}'
+      Content-Length:
+      - '92'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+      Content-Type:
+      - application/json;charset=utf-8
+      Content-Length:
+      - '1047'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+    body:
+      encoding: US-ASCII
+      string: ! "{\n  \"id\": \"ch_29LUetLPOjsJqT\",\n  \"object\": \"charge\",\n
+        \ \"created\": 1373144429,\n  \"livemode\": false,\n  \"paid\": true,\n  \"amount\":
+        999,\n  \"currency\": \"cad\",\n  \"refunded\": false,\n  \"fee\": 59,\n  \"fee_details\":
+        [\n    {\n      \"amount\": 59,\n      \"currency\": \"cad\",\n      \"type\":
+        \"stripe_fee\",\n      \"description\": \"Stripe processing fees\",\n      \"application\":
+        null,\n      \"amount_refunded\": 0\n    }\n  ],\n  \"card\": {\n    \"object\":
+        \"card\",\n    \"last4\": \"4242\",\n    \"type\": \"Visa\",\n    \"exp_month\":
+        3,\n    \"exp_year\": 2015,\n    \"fingerprint\": \"dYM8NQQzCkhwHw6j\",\n
+        \   \"country\": \"US\",\n    \"name\": null,\n    \"address_line1\": null,\n
+        \   \"address_line2\": null,\n    \"address_city\": null,\n    \"address_state\":
+        null,\n    \"address_zip\": null,\n    \"address_country\": null,\n    \"cvc_check\":
+        \"pass\",\n    \"address_line1_check\": null,\n    \"address_zip_check\":
+        null\n  },\n  \"captured\": true,\n  \"failure_message\": null,\n  \"failure_code\":
+        null,\n  \"amount_refunded\": 0,\n  \"customer\": null,\n  \"invoice\": null,\n
+        \ \"description\": \"Myflix monthly service fee\",\n  \"dispute\": null\n}\n"
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:33 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":"/html"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '33'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '96'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:33 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":"/html"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '33'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{df21efbe-d7b8-2b45-a411-2257416fbc70}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bdf21efbe-d7b8-2b45-a411-2257416fbc70%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bdf21efbe-d7b8-2b45-a411-2257416fbc70%7D/text
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '204'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJuYW1lIjoiZ2V0RWxlbWVudFRleHQiLCJzZXNzaW9uSWQiOiJkM2YwYTU3
+        ZC1jZDY1LTlhNGYtYTI3MC0yMDY3ZWUyNTg1ZTYiLCJzdGF0dXMiOjAsInZh
+        bHVlIjoiTXlGTGlYXG5WSURFT1Ncbk1ZIFFVRVVFXG5QRU9QTEVcbklOVklU
+        RVxuV2VsY29tZSwgU25vb3AgRG9nZ1xuw5dcblN1Y2Nlc3NmdWxseSByZWdp
+        c3RlcmVkXG7CqSAyMDEzIE15RkxpWCJ9
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//a[./@href][(((./@id = ''People'' or
+        normalize-space(string(.)) = ''People'') or ./@title = ''People'') or .//img[./@alt
+        = ''People''])]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '158'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{c2fd0f03-d8ce-8041-991b-1b537ba0230b}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bc2fd0f03-d8ce-8041-991b-1b537ba0230b%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bc2fd0f03-d8ce-8041-991b-1b537ba0230b%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":"/html"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '33'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{fa552554-78be-2348-a87c-19038db6c3fc}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bfa552554-78be-2348-a87c-19038db6c3fc%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bfa552554-78be-2348-a87c-19038db6c3fc%7D/text
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '251'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJuYW1lIjoiZ2V0RWxlbWVudFRleHQiLCJzZXNzaW9uSWQiOiJkM2YwYTU3
+        ZC1jZDY1LTlhNGYtYTI3MC0yMDY3ZWUyNTg1ZTYiLCJzdGF0dXMiOjAsInZh
+        bHVlIjoiTXlGTGlYXG5WSURFT1Ncbk1ZIFFVRVVFXG5QRU9QTEVcbklOVklU
+        RVxuV2VsY29tZSwgU25vb3AgRG9nZ1xuUGVvcGxlIEkgRm9sbG93XG5WaWRl
+        b3MgaW4gUXVldWUgRm9sbG93ZXJzIFVuZm9sbG93XG5DYW15bGxlIEtvdmFj
+        ZWsgSSAwIDFcbsKpIDIwMTMgTXlGTGlYIn0=
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//a[./@href][(((./@id = ''Welcome, Snoop
+        Dogg'' or normalize-space(string(.)) = ''Welcome, Snoop Dogg'') or ./@title
+        = ''Welcome, Snoop Dogg'') or .//img[./@alt = ''Welcome, Snoop Dogg''])]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '210'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{dae7717a-2ff8-6443-875c-5e3d38ba9a62}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bdae7717a-2ff8-6443-875c-5e3d38ba9a62%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bdae7717a-2ff8-6443-875c-5e3d38ba9a62%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//a[./@href][(((./@id = ''Sign Out'' or
+        normalize-space(string(.)) = ''Sign Out'') or ./@title = ''Sign Out'') or
+        .//img[./@alt = ''Sign Out''])]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '166'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{fc36f60f-7cf1-d444-b4b9-fdca4c55a101}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bfc36f60f-7cf1-d444-b4b9-fdca4c55a101%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:34 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:34 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bfc36f60f-7cf1-d444-b4b9-fdca4c55a101%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/url
+    body:
+      encoding: US-ASCII
+      string: ! '{"url":"http://127.0.0.1:52814/login"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '38'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '87'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"get","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Email'' or ./@name
+        = ''Email'') or ./@placeholder = ''Email'') or ./@id = //label[normalize-space(string(.))
+        = ''Email'']/@for)] | .//label[normalize-space(string(.)) = ''Email'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '547'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{3d928c2c-d3e2-1640-bac6-8e54cff3cfa4}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B3d928c2c-d3e2-1640-bac6-8e54cff3cfa4%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B3d928c2c-d3e2-1640-bac6-8e54cff3cfa4%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B3d928c2c-d3e2-1640-bac6-8e54cff3cfa4%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B3d928c2c-d3e2-1640-bac6-8e54cff3cfa4%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '107'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"text"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B3d928c2c-d3e2-1640-bac6-8e54cff3cfa4%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{3d928c2c-d3e2-1640-bac6-8e54cff3cfa4}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B3d928c2c-d3e2-1640-bac6-8e54cff3cfa4%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["ernestine_corwin@stamm.com"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '40'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//*[self::input | self::textarea][not(./@type
+        = ''submit'' or ./@type = ''image'' or ./@type = ''radio'' or ./@type = ''checkbox''
+        or ./@type = ''hidden'' or ./@type = ''file'')][(((./@id = ''Password'' or
+        ./@name = ''Password'') or ./@placeholder = ''Password'') or ./@id = //label[normalize-space(string(.))
+        = ''Password'']/@for)] | .//label[normalize-space(string(.)) = ''Password'']//.//*[self::input
+        | self::textarea][not(./@type = ''submit'' or ./@type = ''image'' or ./@type
+        = ''radio'' or ./@type = ''checkbox'' or ./@type = ''hidden'' or ./@type =
+        ''file'')]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '562'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{60d93828-9e3a-af41-99f9-f5664779b6ec}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B60d93828-9e3a-af41-99f9-f5664779b6ec%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B60d93828-9e3a-af41-99f9-f5664779b6ec%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B60d93828-9e3a-af41-99f9-f5664779b6ec%7D/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '106'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementTagName","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"input"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B60d93828-9e3a-af41-99f9-f5664779b6ec%7D/attribute/type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '111'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:35 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"password"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:35 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B60d93828-9e3a-af41-99f9-f5664779b6ec%7D/attribute/readonly
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '105'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:36 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"getElementAttribute","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:36 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/execute
+    body:
+      encoding: US-ASCII
+      string: ! '{"script":"arguments[0].value = ''''","args":[{"ELEMENT":"{60d93828-9e3a-af41-99f9-f5664779b6ec}"}]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '98'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '99'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:36 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"executeScript","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":null}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:36 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7B60d93828-9e3a-af41-99f9-f5664779b6ec%7D/value
+    body:
+      encoding: US-ASCII
+      string: ! '{"value":["v3lf9i9rroe68il7bzx710dku6zxe9z3ckwww0qfet7uusyjbeyr4627qtmhcn4aebkdx494acprjpoj0xfd4cd8k6cxk5ollpjxcdcp9v3yd54rkvwb1uwrz9lrcqn6um5c35ok2vnckxp4gh9wzs6muhe0d54ijw5hfcegcxjyuvprn2ffjpvguk3b6flxai4hqrr36pf8q9nmhj4zt0g9q3ejj7thehu59bvahk3d5sfuuvh12tszx4ffsve"]}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '269'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '101'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:36 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"sendKeysToElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:36 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//input[./@type = ''submit'' or ./@type
+        = ''reset'' or ./@type = ''image'' or ./@type = ''button''][((./@id = ''Sign
+        in'' or ./@value = ''Sign in'') or ./@title = ''Sign in'')] | .//input[./@type
+        = ''image''][./@alt = ''Sign in''] | .//button[(((./@id = ''Sign in'' or ./@value
+        = ''Sign in'') or normalize-space(string(.)) = ''Sign in'') or ./@title =
+        ''Sign in'')] | .//input[./@type = ''image''][./@alt = ''Sign in'']"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '418'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:36 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{b6e015d9-fef2-7342-a7a0-b9fdfb83b130}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:36 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bb6e015d9-fef2-7342-a7a0-b9fdfb83b130%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:36 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:36 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bb6e015d9-fef2-7342-a7a0-b9fdfb83b130%7D/enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '102'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:36 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementEnabled","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:36 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bb6e015d9-fef2-7342-a7a0-b9fdfb83b130%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:36 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:36 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":".//a[./@href][(((./@id = ''People'' or
+        normalize-space(string(.)) = ''People'') or ./@title = ''People'') or .//img[./@alt
+        = ''People''])]"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '158'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:36 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{c2ffb994-a379-e949-a4de-ed7122896dfd}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:36 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bc2ffb994-a379-e949-a4de-ed7122896dfd%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:37 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:37 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Bc2ffb994-a379-e949-a4de-ed7122896dfd%7D/click
+    body:
+      encoding: US-ASCII
+      string: ! '{}'
+    headers:
+      Accept:
+      - application/json
+      Content-Length:
+      - '2'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '98'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:37 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"clickElement","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":"ok"}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:37 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/elements
+    body:
+      encoding: US-ASCII
+      string: ! '{"using":"xpath","value":"/html"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '33'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '148'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:37 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"findElements","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":[{"ELEMENT":"{a1a3972c-9bcd-f140-9bca-b085a2c49a11}"}]}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:37 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Ba1a3972c-9bcd-f140-9bca-b085a2c49a11%7D/displayed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '104'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:37 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"isElementDisplayed","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":true}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:37 GMT
+- request:
+    method: get
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/element/%7Ba1a3972c-9bcd-f140-9bca-b085a2c49a11%7D/text
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Cache-Control:
+      - no-cache
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '251'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:37 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJuYW1lIjoiZ2V0RWxlbWVudFRleHQiLCJzZXNzaW9uSWQiOiJkM2YwYTU3
+        ZC1jZDY1LTlhNGYtYTI3MC0yMDY3ZWUyNTg1ZTYiLCJzdGF0dXMiOjAsInZh
+        bHVlIjoiTXlGTGlYXG5WSURFT1Ncbk1ZIFFVRVVFXG5QRU9QTEVcbklOVklU
+        RVxuV2VsY29tZSwgQ2FteWxsZSBLb3ZhY2VrIElcblBlb3BsZSBJIEZvbGxv
+        d1xuVmlkZW9zIGluIFF1ZXVlIEZvbGxvd2VycyBVbmZvbGxvd1xuU25vb3Ag
+        RG9nZyAwIDFcbsKpIDIwMTMgTXlGTGlYIn0=
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:37 GMT
+- request:
+    method: delete
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/cookie
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '100'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:37 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"deleteAllCookies","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:37 GMT
+- request:
+    method: post
+    uri: http://127.0.0.1:7055/hub/session/d3f0a57d-cd65-9a4f-a270-2067ee2585e6/url
+    body:
+      encoding: US-ASCII
+      string: ! '{"url":"about:blank"}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '21'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Connection:
+      - close
+      Content-Length:
+      - '87'
+      Server:
+      - httpd.js
+      Date:
+      - Sat, 06 Jul 2013 21:00:37 GMT
+    body:
+      encoding: US-ASCII
+      string: ! '{"name":"get","sessionId":"d3f0a57d-cd65-9a4f-a270-2067ee2585e6","status":0,"value":""}'
+    http_version: 
+  recorded_at: Sat, 06 Jul 2013 21:00:37 GMT
+recorded_with: VCR 2.5.0

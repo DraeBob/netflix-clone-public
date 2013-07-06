@@ -23,34 +23,32 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if @user.valid?
       handle_payment(@user)
-      handle_invitation
-      AppMailer.notify_on_new_user(@user).deliver
-      flash[:notice] = "Successfully registered"
-      redirect_to login_path
+      if @charge.successful?
+        @user.save
+        session[:user_id] = @user.id
+        handle_invitation
+        AppMailer.notify_on_new_user(@user).deliver
+        flash[:success] = "Successfully registered"
+        redirect_to videos_path
+      else 
+        flash[:error] = @charge.error_message
+        render :new
+      end
     else
+      flash[:error] = 'Cannot create an user, check the input and try again'
       render :new
     end
   end
 
-  private
-
   def handle_payment(user)
-    Stripe.api_key = ENV['Stripe_api']
     token = params[:stripeToken]
-    begin
-      Stripe::Charge.create(
-        :amount => 999,
-        :currency => "cad",
-        :card => token,
-        :description => 'Myflix monthly service fee'
-      )
-    rescue Stripe::CardError => e
-      user.destroy
-      flash[:error] = e.message
-      redirect_to new_user_path
-    end
+    @charge = StripeWrapper::Charge.create(
+      :amount => 999,
+      :card => token,
+      :description => 'Myflix monthly service fee'
+    )
   end
 
   def handle_invitation

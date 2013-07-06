@@ -41,6 +41,12 @@ describe UsersController do
     context "user registration process" do
       let(:user) { Fabricate(:user)}
       context "valid input" do
+
+        let(:response){ double('response', successful?: true)}
+        before do
+          StripeWrapper::Charge.stub(:create).and_return(response)
+        end
+
         it "saves a new user in the database if the inputs are valid" do
           expect {
             post :create, user: Fabricate.attributes_for(:user)
@@ -54,7 +60,7 @@ describe UsersController do
 
         it "show flash message if registered successfully" do
           post :create, user: Fabricate.attributes_for(:user)
-          expect(flash[:notice]).to eq("Successfully registered")
+          expect(flash[:success]).to eq("Successfully registered")
         end
 
         it "set current_user when registered successfully" do
@@ -99,7 +105,47 @@ describe UsersController do
       end
     end
 
+    context 'with a successful charge' do
+      before do
+        charge = double('charge')
+        charge.stub(:successful?).and_return(true)
+        StripeWrapper::Charge.stub(:create).and_return(charge)
+        post :create, user: Fabricate.attributes_for(:user), stripeToken: '123'
+      end
+
+      it 'sets the flash success message' do
+        expect(flash[:success]).to eq('Successfully registered')
+      end
+
+      it 'redirects to videos_path' do
+        expect(response).to redirect_to videos_path
+      end
+    end
+
+    context 'with an error charge' do
+      before do
+        charge = double('charge')
+        charge.stub(:successful?).and_return(false)
+        charge.stub(:error_message).and_return('Your card was declined.')
+        StripeWrapper::Charge.stub(:create).and_return(charge)
+        post :create, user: Fabricate.attributes_for(:user), stripeToken: '123'
+      end
+
+      it 'sets the flash error message' do
+        expect(flash[:error]).to eq('Your card was declined.')
+      end
+
+      it 'redirects to new_user_path' do
+        expect(response).to render_template :new
+      end
+    end
+
     context "email sending" do
+      before do
+        charge = double('charge')
+        charge.stub(:successful?).and_return(true)
+        StripeWrapper::Charge.stub(:create).and_return(charge)
+      end
       after { ActionMailer::Base.deliveries.clear }
 
       it_behaves_like "send_email_with_valid_input" do
@@ -119,7 +165,7 @@ describe UsersController do
       it_behaves_like "not_send_email_with_invalid_input" do
         let(:action) { post :create, user: Fabricate.attributes_for(:user, fullname: nil, password: nil, token: nil) }
       end
-      
     end
+
   end
 end
