@@ -39,12 +39,12 @@ describe Video do
     let(:video) {Fabricate(:video)}
 
     it "should return 0 if there is no review" do
-      expect(video.average_ratings).to eq 0
+      expect(video.decorator.average_ratings).to eq 0
     end
     it "should return the average review if there are any reviews" do
       video.reviews << Fabricate(:review, body: "aaa", rate: 2)
       video.reviews << Fabricate(:review, body: "aaa", rate: 5)
-      expect(video.average_ratings).to eq(3.5)
+      expect(video.decorator.average_ratings).to eq(3.5)
     end
   end
 end
