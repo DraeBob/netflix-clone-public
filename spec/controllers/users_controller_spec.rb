@@ -41,6 +41,12 @@ describe UsersController do
     context "user registration process" do
       let(:user) { Fabricate(:user)}
       context "valid input" do
+
+        let(:response){ double('response', successful?: true)}
+        before do
+          StripeWrapper::Charge.stub(:create).and_return(response)
+        end
+
         it "saves a new user in the database if the inputs are valid" do
           expect {
             post :create, user: Fabricate.attributes_for(:user)
@@ -54,7 +60,7 @@ describe UsersController do
 
         it "show flash message if registered successfully" do
           post :create, user: Fabricate.attributes_for(:user)
-          expect(flash[:notice]).to eq("Successfully registered")
+          expect(flash[:success]).to eq("Successfully registered")
         end
 
         it "set current_user when registered successfully" do

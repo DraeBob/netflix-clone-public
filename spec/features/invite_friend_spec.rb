@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 feature 'Invite friend' do
-  scenario 'User successfully invites a friend, and accepts the invitation' do
+  scenario 'User successfully invites a friend, and accepts the invitation', js: true do
     eminem = Fabricate(:user)
     sign_in(eminem)
 
-    invite_a_friend
+    invite_a_friend(eminem)
     friend_accepts_the_invitation
 
     friend_follows_inviter(eminem)
@@ -14,12 +14,13 @@ feature 'Invite friend' do
     clear_email
   end
 
-  def invite_a_friend
+  def invite_a_friend(inviter)
     visit invite_path
     fill_in "Friend's Name", with: 'Snoop Dogg'
     fill_in "Friend's Email Address", with: 'snoop@example.com'
     fill_in "Invitation Message", with: 'What up'
     click_button 'Send Invitation'
+    click_link "Welcome, #{inviter.fullname}"
     click_link 'Sign Out'
   end
 
@@ -30,6 +31,11 @@ feature 'Invite friend' do
     expect(page).to have_content 'Register'
     fill_in 'Password', with: 'password'
     fill_in 'Fullname', with: 'Snoop Dogg'
+    fill_in 'Credit Card Number', with: '4242424242424242'
+    fill_in 'Security Code', with: '123'
+    select '3 - March', from: 'date_month'
+    select '2015', from: 'date_year'
+
     click_button 'Register'
 
     expect(page).to have_content("Successfully registered")
@@ -38,6 +44,7 @@ feature 'Invite friend' do
   def friend_follows_inviter(inviter)
     click_link 'People'
     expect(page).to have_content(inviter.fullname)
+    click_link "Welcome, Snoop Dogg"
     click_link 'Sign Out'
   end
 

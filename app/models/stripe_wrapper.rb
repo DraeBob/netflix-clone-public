@@ -12,7 +12,7 @@ module StripeWrapper
       begin
         response = Stripe::Charge.create(
           amount: options[:amount],
-          currency: "usd",
+          currency: "cad",
           card: options[:card],
           description: 'Myflix monthly service fee'
          ) 
@@ -32,6 +32,6 @@ module StripeWrapper
   end
 
   def self.set_api_key
-    Stripe.api_key = Rails.env.production? ? ENV['Stripe_live_api'] : ENV['Stripe_api']
+    Stripe.api_key = ENV['Stripe_api']
   end
 end
