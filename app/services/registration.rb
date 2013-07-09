@@ -1,36 +1,29 @@
 class Registration < Draper::Decorator
-  delegate_all
-  def initialize(user)
+  attr_reader :user, :token, :invitation_token
+
+  def initialize(user, token, invitation_token)
     @user = user
+    @token = token
+    @invitation_token = invitation_token
   end
    
-  def registration_process
-    handle_payment(@user)
-    if @charge.successful?
+  def user_registration
       @user.save
-      session[:user_id] = @user.id
       handle_invitation
       AppMailer.notify_on_new_user(@user).deliver
-      flash[:success] = "Successfully registered"
-      redirect_to videos_path
-    else 
-      flash[:error] = @charge.error_message
-      render :new
-    end
   end
 
-  def handle_payment(user)
-    token = params[:stripeToken]
-    @charge = StripeWrapper::Charge.create(
+  def handle_payment
+    StripeWrapper::Charge.create(
       :amount => 999,
-      :card => token,
+      :card => @token,
       :description => 'Myflix monthly service fee'
     )
   end
 
   def handle_invitation
-    if params[:invitation_token].present?
-      invitation = Invitation.where(token: params[:invitation_token]).first
+    if @invitation_token.present?
+      invitation = Invitation.where(token: @invitation_token).first
       @user.follow(invitation.inviter)
       invitation.inviter.follow(@user)
       invitation.update_column(:token, nil)
