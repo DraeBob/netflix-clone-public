@@ -23,23 +23,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    token = params[:stripeToken]
-    invitation_token = params[:invitation_token]
-
-    if @user.valid?
-      registration = Registration.new(@user, token, invitation_token)
-      registration.handle_payment
-      if registration.handle_payment.successful?
-        registration.user_registration
-        session[:user_id] = @user.id
-        flash[:success] = "Successfully registered"
-        redirect_to videos_path
-      else 
-        flash[:error] = registration.handle_payment.error_message
-        render :new
-      end
-    else
-      flash[:error] = 'Cannot create an user, check the input and try again'
+    result = Registration.new(@user).user_registration(params[:stripeToken], params[:invitation_token])
+    if result.successful?
+      session[:user_id] = @user.id
+      flash[:success] = "Successfully registered"
+      redirect_to videos_path
+    else 
+      flash[:error] = result.error_message
       render :new
     end
   end
