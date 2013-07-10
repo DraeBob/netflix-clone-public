@@ -10,8 +10,8 @@ describe Registration do
       after { ActionMailer::Base.deliveries.clear }
 
       it "saves a new user in the database if the inputs are valid" do
-        Registration.new(Fabricate.attributes_for(:user)).user_registration('some_stripe_token', nil)
-        expect(User.count).to eq(0) 
+        Registration.new(Fabricate.build(:user)).user_registration('some_stripe_token', nil)
+        expect(User.count).to eq(1) 
       end
 
       it "makes the invited friend follow the inviter" do
@@ -53,24 +53,24 @@ describe Registration do
       it "does not create a new user record" do
         charge = double(:charge, successful?: false, error_message: 'Your card was declined.')
         StripeWrapper::Charge.should_receive(:create).and_return(charge)
-        Registration.new(Fabricate.attributes_for(:user)).user_registration('12345', nil)
+        Registration.new(Fabricate.build(:user)).user_registration('12345', nil)
         expect(User.count).to eq(0)
       end
     end
 
     context 'invalid input' do
       it "Do not save the user if inputs are invalid" do
-        Registration.new(Fabricate.attributes_for(:user)).user_registration('12345', nil)
+        Registration.new(User.new(email: 'alex@example.com')).user_registration('12345', nil)
         expect(User.count).to eq(0)    
       end
 
       it "Do not charge if inputs are invalid" do
         StripeWrapper::Charge.should_not_receive(:create)
-        Registration.new(Fabricate.attributes_for(:user)).user_registration('12345', nil)
+        Registration.new(User.new(email: 'alex@example.com')).user_registration('12345', nil)
       end
 
       it "Do not send email if inputs are invalid" do
-        Registration.new(Fabricate.attributes_for(:user)).user_registration('12345', nil)
+        Registration.new(User.new(email: 'alex@example.com')).user_registration('12345', nil)
         expect(ActionMailer::Base.deliveries).to be_empty    
       end
     end
