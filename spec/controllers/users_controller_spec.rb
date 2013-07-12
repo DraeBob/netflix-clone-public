@@ -40,37 +40,38 @@ describe UsersController do
   describe "POST create" do
     context "successful registration" do
       it "redirect to videos_path if registered successfully" do
-        response = double(:user_registration, successful?: true)
+        response = double(:user_registration_result, successful?: true)
         Registration.any_instance.should_receive(:user_registration).and_return(response)
         post :create, user: Fabricate.attributes_for(:user)
         expect(response).to redirect_to videos_path
       end
 
       it "show flash message if registered successfully" do
-        response = double(:user_registration, successful?: true)
+        response = double(:user_registration_result, successful?: true)
         Registration.any_instance.should_receive(:user_registration).and_return(response)
         post :create, user: Fabricate.attributes_for(:user)
         expect(flash[:success]).to eq("Successfully registered")
       end
 
       it "set current_user when registered successfully" do
-        response = double(:user_registration, successful?: true)
+        response = double(:user_registration_result, successful?: true)
         Registration.any_instance.should_receive(:user_registration).and_return(response)
-        post :create, user: Fabricate.attributes_for(:user)
-        expect(session[:user_id]).to eq(User.first.id)
+        alice = Fabricate.attributes_for(:user)
+        post :create, user: alice
+        expect(session[:user_id]).to eq(alice[:id])
       end
     end
 
     context "failed registration" do
       it "renders new template" do
-        response = double(:user_registration, successful?: false, error_message: 'Cannot create an user, check the input and try again')
+        response = double(:user_registration_result, successful?: false, error_message: 'Cannot create an user, check the input and try again')
         Registration.any_instance.should_receive(:user_registration).and_return(response)
         post :create, user: Fabricate.attributes_for(:user), stripeToken: '12345'
         expect(response).to render_template :new
       end
 
       it "show flash error message" do
-        response = double(:user_registration, successful?: false, error_message: 'Cannot create an user, check the input and try again')
+        response = double(:user_registration_result, successful?: false, error_message: 'Cannot create an user, check the input and try again')
         Registration.any_instance.should_receive(:user_registration).and_return(response)
         post :create, user: Fabricate.attributes_for(:user), stripeToken: '12345'
         expect(flash[:error]).to eq('Cannot create an user, check the input and try again')
