@@ -6,7 +6,11 @@
       .video_info.span3
         %header
           %h3= @video.title
-          %span Average Rating: #{@video.average_ratings}/5.0
+          %span Average Rating: 
+          - if @video.reviews.count > 0
+            = "#{@video.decorator.average_ratings}/5.0"
+          - else
+            N/A
         %fieldset
           %p.pull-left= @video.description
         .actions
@@ -28,7 +32,7 @@
       %header
         %h3 User Reviews (#{@video.reviews.count})
       %ul
-        -@video.recent_reviews.each do |review|
+        -@video.reviews.each do |review|
           %article.review
             %li.row
               .span2
