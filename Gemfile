@@ -15,6 +15,7 @@ gem "fog", "~> 1.3.1"
 gem "mini_magick"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'draper', '~> 1.0'
+gem 'stripe_event'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

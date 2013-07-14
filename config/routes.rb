@@ -5,8 +5,9 @@ Myflix::Application.routes.draw do
 
   namespace :admin do
     resources :videos, only: [:new, :create]
+    resources :panels, only: [:index]
   end
-  
+
   resources :videos, only: [:index, :show] do
     collection do
       post :search , to: "videos#search"
