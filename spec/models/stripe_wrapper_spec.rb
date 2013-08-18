@@ -48,26 +48,24 @@ describe StripeWrapper do
 
   describe StripeWrapper::Customer do
     describe ".create" do
+      let(:ann){ Fabricate(:user) }
+      let(:response){ StripeWrapper::Customer.create(
+        user: ann,
+        card: token) 
+      }
       context "with valid card" do
         let(:card_number){'4242424242424242'}
         it "creates a customer", :vcr do
-          ann = Fabricate(:user)
-          response = StripeWrapper::Customer.create(
-            user: ann,
-            card: token
-          )
           expect(response).to be_successful
+        end
+
+        it "returns the customer token" do
+          expect(response.customer_token).to be_present
         end
       end    
 
       context "with invalid card" do
         let(:card_number){'4000000000000002'}
-        ann = Fabricate(:user)
-        let(:response){ StripeWrapper::Customer.create(
-          user: ann,
-          card: token) 
-        }
-
         it "Not create a customer", :vcr do
           expect(response).not_to be_successful
         end

@@ -5,9 +5,9 @@ Myflix::Application.routes.draw do
 
   namespace :admin do
     resources :videos, only: [:new, :create]
-    resources :panels, only: [:index]
+    resources :payments, only: [:index]
   end
-  mount StripeEvent::Engine => '/admin_panels_path'
+  mount StripeEvent::Engine => '/stripe_events'
 
   resources :videos, only: [:index, :show] do
     collection do

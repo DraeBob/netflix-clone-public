@@ -12,6 +12,7 @@ class Registration
         :card => stripe_token
       ) 
       if customer.successful?
+        @user.customer_token = customer.customer_token
         @user.save
         handle_invitation(invitation_token)
         AppMailer.notify_on_new_user(@user).deliver

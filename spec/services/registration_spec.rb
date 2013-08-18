@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Registration do
   describe "#user_registration" do
     context "valid personal info and valid card" do
-      let(:customer){ double(:customer, successful?: true) }
+      let(:customer){ double(:customer, successful?: true, customer_token: "abcdefg") }
 
       before { StripeWrapper::Customer.should_receive(:create).and_return(customer) }
 
@@ -12,6 +12,11 @@ describe Registration do
       it "saves a new user in the database if the inputs are valid" do
         Registration.new(Fabricate.build(:user)).user_registration('some_stripe_token', nil)
         expect(User.count).to eq(1) 
+      end
+
+      it "stores the customer token from Stripe" do
+        Registration.new(Fabricate.build(:user)).user_registration('some_stripe_token', nil)
+        expect(User.first.customer_token).to eq("abcdefg")        
       end
 
       it "makes the invited friend follow the inviter" do
