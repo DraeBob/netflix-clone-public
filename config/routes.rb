@@ -7,6 +7,7 @@ Myflix::Application.routes.draw do
     resources :videos, only: [:new, :create]
     resources :panels, only: [:index]
   end
+  mount StripeEvent::Engine => '/admin_panels_path'
 
   resources :videos, only: [:index, :show] do
     collection do

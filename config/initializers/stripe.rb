@@ -6,11 +6,7 @@ Rails.configuration.stripe = {
 Stripe.api_key = Rails.configuration.stripe[:secret_key]
 
 StripeEvent.setup do
-  subscribe 'charge.succeeded' do |event|
-    StripeWrapper::Charge.create
-  end
-
   subscribe 'customer.created' do |event|
-    StripeWrapper::Customer.create
+    StripeWrapper::Customer.create(event)
   end
 end

@@ -7,10 +7,10 @@ class Registration
    
   def user_registration(stripe_token, invitation_token)
     if @user.valid?
-      charge = StripeWrapper::Customer.create(
-        :plan => "premium",
+      charge = StripeWrapper::Charge.create(
+        :amount => 999,
         :card => stripe_token,
-        :email => @user.email
+        :description => "Sign up charge for #{@user.email}"
       ) 
       if charge.successful?
         @user.save
