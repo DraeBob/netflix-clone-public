@@ -43,7 +43,7 @@ group :test do
   gem 'capybara-email'
   gem 'vcr'
   gem 'webmock', '1.11.0'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', "~> 2.34.0"
 end
 
 group :development, :test do

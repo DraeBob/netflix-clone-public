@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: card=tok_2PLRBwyUIUZ7Wp&email=snoop%40example.com&plan=premium
+      string: card=tok_2R1zKISxnNOKb6&email=snoop%40example.com&plan=premium
     headers:
       Accept:
       - ! '*/*; q=0.5, application/xml'
@@ -31,51 +31,51 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 18 Aug 2013 14:01:44 GMT
+      - Fri, 23 Aug 2013 02:04:11 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '2147'
       Connection:
       - keep-alive
-      Access-Control-Max-Age:
-      - '300'
       Access-Control-Allow-Credentials:
       - 'true'
       Cache-Control:
       - no-cache, no-store
+      Access-Control-Max-Age:
+      - '300'
     body:
       encoding: US-ASCII
-      string: ! "{\n  \"object\": \"customer\",\n  \"created\": 1376834501,\n  \"id\":
-        \"cus_2PLRnyvmodYQUr\",\n  \"livemode\": false,\n  \"description\": null,\n
+      string: ! "{\n  \"object\": \"customer\",\n  \"created\": 1377223450,\n  \"id\":
+        \"cus_2R1zZe1zzI1YUB\",\n  \"livemode\": false,\n  \"description\": null,\n
         \ \"email\": \"snoop@example.com\",\n  \"delinquent\": false,\n  \"subscription\":
         {\n    \"plan\": {\n      \"interval\": \"month\",\n      \"name\": \"Myflix
         monthly plan\",\n      \"amount\": 999,\n      \"currency\": \"cad\",\n      \"id\":
         \"premium\",\n      \"object\": \"plan\",\n      \"livemode\": false,\n      \"interval_count\":
         1,\n      \"trial_period_days\": null\n    },\n    \"object\": \"subscription\",\n
-        \   \"start\": 1376834501,\n    \"status\": \"active\",\n    \"customer\":
-        \"cus_2PLRnyvmodYQUr\",\n    \"cancel_at_period_end\": false,\n    \"current_period_start\":
-        1376834501,\n    \"current_period_end\": 1379512901,\n    \"ended_at\": null,\n
+        \   \"start\": 1377223451,\n    \"status\": \"active\",\n    \"customer\":
+        \"cus_2R1zZe1zzI1YUB\",\n    \"cancel_at_period_end\": false,\n    \"current_period_start\":
+        1377223451,\n    \"current_period_end\": 1379901851,\n    \"ended_at\": null,\n
         \   \"trial_start\": null,\n    \"trial_end\": null,\n    \"canceled_at\":
         null,\n    \"quantity\": 1\n  },\n  \"discount\": null,\n  \"account_balance\":
         0,\n  \"cards\": {\n    \"object\": \"list\",\n    \"count\": 1,\n    \"url\":
-        \"/v1/customers/cus_2PLRnyvmodYQUr/cards\",\n    \"data\": [\n      {\n        \"id\":
-        \"card_2PLRc5lSPCXvV6\",\n        \"object\": \"card\",\n        \"last4\":
+        \"/v1/customers/cus_2R1zZe1zzI1YUB/cards\",\n    \"data\": [\n      {\n        \"id\":
+        \"card_2R1zvCAQQS2E5p\",\n        \"object\": \"card\",\n        \"last4\":
         \"4242\",\n        \"type\": \"Visa\",\n        \"exp_month\": 3,\n        \"exp_year\":
         2015,\n        \"fingerprint\": \"dYM8NQQzCkhwHw6j\",\n        \"customer\":
-        \"cus_2PLRnyvmodYQUr\",\n        \"country\": \"US\",\n        \"name\": null,\n
+        \"cus_2R1zZe1zzI1YUB\",\n        \"country\": \"US\",\n        \"name\": null,\n
         \       \"address_line1\": null,\n        \"address_line2\": null,\n        \"address_city\":
         null,\n        \"address_state\": null,\n        \"address_zip\": null,\n
         \       \"address_country\": null,\n        \"cvc_check\": \"pass\",\n        \"address_line1_check\":
         null,\n        \"address_zip_check\": null\n      }\n    ]\n  },\n  \"default_card\":
-        \"card_2PLRc5lSPCXvV6\",\n  \"active_card\": {\n    \"id\": \"card_2PLRc5lSPCXvV6\",\n
+        \"card_2R1zvCAQQS2E5p\",\n  \"active_card\": {\n    \"id\": \"card_2R1zvCAQQS2E5p\",\n
         \   \"object\": \"card\",\n    \"last4\": \"4242\",\n    \"type\": \"Visa\",\n
         \   \"exp_month\": 3,\n    \"exp_year\": 2015,\n    \"fingerprint\": \"dYM8NQQzCkhwHw6j\",\n
-        \   \"customer\": \"cus_2PLRnyvmodYQUr\",\n    \"country\": \"US\",\n    \"name\":
+        \   \"customer\": \"cus_2R1zZe1zzI1YUB\",\n    \"country\": \"US\",\n    \"name\":
         null,\n    \"address_line1\": null,\n    \"address_line2\": null,\n    \"address_city\":
         null,\n    \"address_state\": null,\n    \"address_zip\": null,\n    \"address_country\":
         null,\n    \"cvc_check\": \"pass\",\n    \"address_line1_check\": null,\n
         \   \"address_zip_check\": null\n  }\n}\n"
     http_version: 
-  recorded_at: Sun, 18 Aug 2013 14:01:44 GMT
+  recorded_at: Fri, 23 Aug 2013 02:04:11 GMT
 recorded_with: VCR 2.5.0

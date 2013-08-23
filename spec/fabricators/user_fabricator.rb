@@ -4,6 +4,7 @@ Fabricator(:user) do
   password { Faker::Lorem.characters}
   token { Faker::Lorem.characters }
   admin false 
+  active true
 end
 
 Fabricator(:admin, from: :user) do

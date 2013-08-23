@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 18 Aug 2013 15:01:18 GMT
+      - Fri, 23 Aug 2013 02:04:30 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -67,5 +67,5 @@ http_interactions:
         \         \"application\": null\n        }\n      ]\n    }\n  },\n  \"object\":
         \"event\",\n  \"pending_webhooks\": 0,\n  \"request\": \"iar_2PLkIyIK1SSiW7\"\n}\n"
     http_version: 
-  recorded_at: Sun, 18 Aug 2013 15:01:19 GMT
+  recorded_at: Fri, 23 Aug 2013 02:04:30 GMT
 recorded_with: VCR 2.5.0

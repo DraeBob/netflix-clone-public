@@ -29,19 +29,19 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 18 Aug 2013 15:01:12 GMT
+      - Fri, 23 Aug 2013 02:04:28 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '1562'
       Connection:
       - keep-alive
-      Access-Control-Max-Age:
-      - '300'
       Access-Control-Allow-Credentials:
       - 'true'
       Cache-Control:
       - no-cache, no-store
+      Access-Control-Max-Age:
+      - '300'
     body:
       encoding: US-ASCII
       string: ! "{\n  \"id\": \"evt_2PLkpdRwuM0vMf\",\n  \"created\": 1376835662,\n
@@ -67,5 +67,5 @@ http_interactions:
         \         \"application\": null\n        }\n      ]\n    }\n  },\n  \"object\":
         \"event\",\n  \"pending_webhooks\": 0,\n  \"request\": \"iar_2PLkIyIK1SSiW7\"\n}\n"
     http_version: 
-  recorded_at: Sun, 18 Aug 2013 15:01:12 GMT
+  recorded_at: Fri, 23 Aug 2013 02:04:28 GMT
 recorded_with: VCR 2.5.0

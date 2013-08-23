@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 18 Aug 2013 14:02:23 GMT
+      - Fri, 23 Aug 2013 02:03:42 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -46,22 +46,22 @@ http_interactions:
       - '300'
     body:
       encoding: US-ASCII
-      string: ! "{\n  \"id\": \"tok_2PLSbnNSWdyCEE\",\n  \"livemode\": false,\n  \"created\":
-        1376834543,\n  \"used\": false,\n  \"object\": \"token\",\n  \"type\": \"card\",\n
-        \ \"card\": {\n    \"id\": \"card_2PLSblMwGRgDkp\",\n    \"object\": \"card\",\n
+      string: ! "{\n  \"id\": \"tok_2R1zk4FiguMRuU\",\n  \"livemode\": false,\n  \"created\":
+        1377223421,\n  \"used\": false,\n  \"object\": \"token\",\n  \"type\": \"card\",\n
+        \ \"card\": {\n    \"id\": \"card_2R1zNf4B97oPl8\",\n    \"object\": \"card\",\n
         \   \"last4\": \"0002\",\n    \"type\": \"Visa\",\n    \"exp_month\": 3,\n
         \   \"exp_year\": 2016,\n    \"fingerprint\": \"QzinWsuCj2nhuZLZ\",\n    \"customer\":
         null,\n    \"country\": \"US\",\n    \"name\": null,\n    \"address_line1\":
         null,\n    \"address_line2\": null,\n    \"address_city\": null,\n    \"address_state\":
         null,\n    \"address_zip\": null,\n    \"address_country\": null\n  }\n}\n"
     http_version: 
-  recorded_at: Sun, 18 Aug 2013 14:02:23 GMT
+  recorded_at: Fri, 23 Aug 2013 02:03:42 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=cad&card=tok_2PLSbnNSWdyCEE&description=Invalid%20card
+      string: amount=999&currency=cad&card=tok_2R1zk4FiguMRuU&description=Invalid%20card
     headers:
       Accept:
       - ! '*/*; q=0.5, application/xml'
@@ -87,7 +87,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 18 Aug 2013 14:02:26 GMT
+      - Fri, 23 Aug 2013 02:03:43 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -104,7 +104,7 @@ http_interactions:
       encoding: US-ASCII
       string: ! "{\n  \"error\": {\n    \"message\": \"Your card was declined.\",\n
         \   \"type\": \"card_error\",\n    \"code\": \"card_declined\",\n    \"charge\":
-        \"ch_2PLSrnUoT7CcGN\"\n  }\n}\n"
+        \"ch_2R1z5BLgHVEaB2\"\n  }\n}\n"
     http_version: 
-  recorded_at: Sun, 18 Aug 2013 14:02:26 GMT
+  recorded_at: Fri, 23 Aug 2013 02:03:43 GMT
 recorded_with: VCR 2.5.0

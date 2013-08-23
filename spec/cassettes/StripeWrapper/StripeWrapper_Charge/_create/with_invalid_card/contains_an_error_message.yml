@@ -31,37 +31,37 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 18 Aug 2013 14:02:15 GMT
+      - Fri, 23 Aug 2013 02:03:44 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '550'
       Connection:
       - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
       Cache-Control:
       - no-cache, no-store
       Access-Control-Max-Age:
       - '300'
-      Access-Control-Allow-Credentials:
-      - 'true'
     body:
       encoding: US-ASCII
-      string: ! "{\n  \"id\": \"tok_2PLRWNaWHDnpod\",\n  \"livemode\": false,\n  \"created\":
-        1376834534,\n  \"used\": false,\n  \"object\": \"token\",\n  \"type\": \"card\",\n
-        \ \"card\": {\n    \"id\": \"card_2PLREn8XV0LBX3\",\n    \"object\": \"card\",\n
+      string: ! "{\n  \"id\": \"tok_2R1z6xAbavbtHh\",\n  \"livemode\": false,\n  \"created\":
+        1377223424,\n  \"used\": false,\n  \"object\": \"token\",\n  \"type\": \"card\",\n
+        \ \"card\": {\n    \"id\": \"card_2R1zlTXUXUYJYn\",\n    \"object\": \"card\",\n
         \   \"last4\": \"0002\",\n    \"type\": \"Visa\",\n    \"exp_month\": 3,\n
         \   \"exp_year\": 2016,\n    \"fingerprint\": \"QzinWsuCj2nhuZLZ\",\n    \"customer\":
         null,\n    \"country\": \"US\",\n    \"name\": null,\n    \"address_line1\":
         null,\n    \"address_line2\": null,\n    \"address_city\": null,\n    \"address_state\":
         null,\n    \"address_zip\": null,\n    \"address_country\": null\n  }\n}\n"
     http_version: 
-  recorded_at: Sun, 18 Aug 2013 14:02:15 GMT
+  recorded_at: Fri, 23 Aug 2013 02:03:45 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=cad&card=tok_2PLRWNaWHDnpod&description=Invalid%20card
+      string: amount=999&currency=cad&card=tok_2R1z6xAbavbtHh&description=Invalid%20card
     headers:
       Accept:
       - ! '*/*; q=0.5, application/xml'
@@ -87,24 +87,24 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 18 Aug 2013 14:02:19 GMT
+      - Fri, 23 Aug 2013 02:03:47 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '152'
       Connection:
       - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
       Cache-Control:
       - no-cache, no-store
       Access-Control-Max-Age:
       - '300'
-      Access-Control-Allow-Credentials:
-      - 'true'
     body:
       encoding: US-ASCII
       string: ! "{\n  \"error\": {\n    \"message\": \"Your card was declined.\",\n
         \   \"type\": \"card_error\",\n    \"code\": \"card_declined\",\n    \"charge\":
-        \"ch_2PLROVrQfX3KGk\"\n  }\n}\n"
+        \"ch_2R1zMXxNtMC1Qr\"\n  }\n}\n"
     http_version: 
-  recorded_at: Sun, 18 Aug 2013 14:02:19 GMT
+  recorded_at: Fri, 23 Aug 2013 02:03:47 GMT
 recorded_with: VCR 2.5.0

@@ -76,7 +76,7 @@ describe Registration do
 
       it "Do not send email if inputs are invalid" do
         Registration.new(User.new(email: 'alex@example.com')).user_registration('12345', nil)
-        expect(ActionMailer::Base.deliveries).to be_empty    
+        expect(ActionMailer::Base.deliveries).to be_empty  
       end
     end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130818144130) do
+ActiveRecord::Schema.define(:version => 20130823003701) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -70,11 +70,12 @@ ActiveRecord::Schema.define(:version => 20130818144130) do
     t.string   "email"
     t.string   "fullname"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "token"
     t.boolean  "admin"
     t.string   "customer_token"
+    t.boolean  "active",          :default => true
   end
 
   create_table "video_categories", :force => true do |t|

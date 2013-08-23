@@ -31,37 +31,37 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 18 Aug 2013 14:02:02 GMT
+      - Fri, 23 Aug 2013 02:03:55 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
       - '550'
       Connection:
       - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
       Cache-Control:
       - no-cache, no-store
       Access-Control-Max-Age:
       - '300'
-      Access-Control-Allow-Credentials:
-      - 'true'
     body:
       encoding: US-ASCII
-      string: ! "{\n  \"id\": \"tok_2PLR3HHefonHPp\",\n  \"livemode\": false,\n  \"created\":
-        1376834521,\n  \"used\": false,\n  \"object\": \"token\",\n  \"type\": \"card\",\n
-        \ \"card\": {\n    \"id\": \"card_2PLR6sihTS0Heg\",\n    \"object\": \"card\",\n
+      string: ! "{\n  \"id\": \"tok_2R1zRrZ91nldf7\",\n  \"livemode\": false,\n  \"created\":
+        1377223435,\n  \"used\": false,\n  \"object\": \"token\",\n  \"type\": \"card\",\n
+        \ \"card\": {\n    \"id\": \"card_2R1zYwAdIQreTQ\",\n    \"object\": \"card\",\n
         \   \"last4\": \"0002\",\n    \"type\": \"Visa\",\n    \"exp_month\": 3,\n
         \   \"exp_year\": 2016,\n    \"fingerprint\": \"QzinWsuCj2nhuZLZ\",\n    \"customer\":
         null,\n    \"country\": \"US\",\n    \"name\": null,\n    \"address_line1\":
         null,\n    \"address_line2\": null,\n    \"address_city\": null,\n    \"address_state\":
         null,\n    \"address_zip\": null,\n    \"address_country\": null\n  }\n}\n"
     http_version: 
-  recorded_at: Sun, 18 Aug 2013 14:02:02 GMT
+  recorded_at: Fri, 23 Aug 2013 02:03:55 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: card=tok_2PLR3HHefonHPp&email=ricky%40pfeffer.name&plan=premium
+      string: card=tok_2R1zRrZ91nldf7&email=julianne_lemke%40mckenzieruel.org&plan=premium
     headers:
       Accept:
       - ! '*/*; q=0.5, application/xml'
@@ -78,7 +78,7 @@ http_interactions:
         Hagios-MacBook-Pro.local 12.4.0 Darwin Kernel Version 12.4.0: Wed May  1 17:57:12
         PDT 2013; root:xnu-2050.24.15~1/RELEASE_X86_64 x86_64"}'
       Content-Length:
-      - '63'
+      - '76'
   response:
     status:
       code: 402
@@ -87,7 +87,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 18 Aug 2013 14:02:04 GMT
+      - Fri, 23 Aug 2013 02:03:58 GMT
       Content-Type:
       - application/json;charset=utf-8
       Content-Length:
@@ -105,5 +105,5 @@ http_interactions:
       string: ! "{\n  \"error\": {\n    \"message\": \"Your card was declined.\",\n
         \   \"type\": \"card_error\",\n    \"code\": \"card_declined\"\n  }\n}\n"
     http_version: 
-  recorded_at: Sun, 18 Aug 2013 14:02:04 GMT
+  recorded_at: Fri, 23 Aug 2013 02:03:58 GMT
 recorded_with: VCR 2.5.0

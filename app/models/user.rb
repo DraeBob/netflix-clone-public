@@ -44,4 +44,7 @@ class User < ActiveRecord::Base
     following_relationships.create(followee: another_user) if can_follow?(another_user)
   end
 
+  def deactivate!
+    update_column(:active, false)
+  end
 end
